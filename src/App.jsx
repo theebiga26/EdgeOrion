@@ -3,6 +3,7 @@ import Hero from './components/sections/Hero'
 import StatsBanner from './components/sections/StatsBanner'
 import AboutUs from './components/sections/AboutUs'
 import Transactions from './components/sections/Transactions'
+import Documentation from './components/sections/Documentation'
 import EnterpriseScale from './components/sections/EnterpriseScale'
 import Pricing from './components/sections/Pricing'
 import Testimonials from './components/sections/Testimonials'
@@ -38,6 +39,7 @@ function App() {
           <StatsBanner />
         <AboutUs />
         <Transactions />
+        <Documentation />
         <EnterpriseScale />
         <Pricing />
         <Testimonials />
