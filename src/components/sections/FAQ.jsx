@@ -3,11 +3,11 @@ import { useState } from 'react';
 import { HiOutlinePlus, HiOutlineMinus, HiPhone } from 'react-icons/hi';
 
 const faqs = [
-  { question: "How does the HTAP cluster perform sub-second queries?", answer: "Our hybrid transactional and analytical processing (HTAP) architecture separates compute from storage. This allows us to route complex analytical queries to dedicated read-nodes in real-time, completely isolating them from your high-throughput transactional nodes." },
-  { question: "Is the data fully decentralized?", answer: "Yes. While we provide enterprise-grade access APIs, the underlying storage relies on a decentralized network of cryptographic nodes. Every piece of data is hashed and verified on-chain." },
-  { question: "What is the maximum TPS supported?", answer: "Our infrastructure is horizontally scalable. Depending on your node allocation, you can achieve upwards of 100,000+ TPS with zero read-latency for analytical streams." },
-  { question: "Do you support standard SQL/JDBC?", answer: "Absolutely. You can connect your existing BI tools, Tableau, or custom dashboards directly to our cluster using standard Postgres drivers and JDBC connections." },
-  { question: "How does pricing work for storage?", answer: "Storage on our decentralized tier is completely free. You only pay for the compute resources (query execution time and TPS throughput) utilized by your active nodes." }
+  { question: "Does Edge Orion support NVIDIA Jetson devices?", answer: "Yes. Our Edge AI deployment engine provides seamless integration with NVIDIA Jetson devices and the JetPack SDK, enabling high-performance distributed inference directly on the edge." },
+  { question: "How does the platform reduce latency?", answer: "By processing live video streams and sensor data locally on edge devices rather than streaming all raw data to the cloud, Edge Orion drastically reduces round-trip latency and bandwidth consumption." },
+  { question: "Can I manage devices across different geographic locations?", answer: "Absolutely. The Edge Operations Dashboard provides centralized fleet management, allowing you to monitor and orchestrate devices across any number of remote or distributed geographic locations." },
+  { question: "Does the platform work offline?", answer: "Yes. Once an AI model is deployed to an edge device, inference continues to run locally even if cloud connectivity is temporarily lost, ensuring uninterrupted operational intelligence." },
+  { question: "What types of cameras are supported?", answer: "Edge Orion is agnostic to camera hardware. We support any IP camera or RTSP stream that can connect to your edge gateways, allowing you to easily scale your visual intelligence network." }
 ];
 
 export default function FAQ() {
@@ -57,7 +57,7 @@ export default function FAQ() {
                     Need Custom<br/>Solutions?
                   </h3>
                   <p className="text-sm text-white/80 mb-6 leading-relaxed">
-                    Our Web3 engineers are ready to architect your enterprise data infrastructure.
+                    Our Edge AI engineers are ready to architect your distributed intelligence infrastructure.
                   </p>
                   <button className="bg-gradient-to-r from-primary to-secondary text-white font-bold py-3 px-8 rounded-tl-[30px] rounded-br-[30px] rounded-tr-[4px] rounded-bl-[4px] text-sm shadow-[0_0_20px_rgba(212,20,255,0.4)] hover:shadow-[0_0_30px_rgba(212,20,255,0.6)] transition-all hover:scale-105 active:scale-95">
                     Learn More
@@ -78,7 +78,7 @@ export default function FAQ() {
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">Contact Us</h3>
                 <p className="text-sm text-textMuted mb-8 leading-relaxed max-w-[250px]">
-                  24/7 dedicated support for Enterprise node operators.
+                  24/7 dedicated support for Enterprise fleet operators.
                 </p>
                 <button className="w-full bg-primary/10 text-primary border border-primary/50 font-bold py-3 rounded-tl-[30px] rounded-br-[30px] rounded-tr-[4px] rounded-bl-[4px] text-sm hover:bg-primary hover:text-white transition-all hover:shadow-[0_0_20px_rgba(212,20,255,0.4)]">
                   Call Now
@@ -100,7 +100,7 @@ export default function FAQ() {
                   Frequently Asked Questions
                 </h2>
                 <p className="text-textMuted text-lg">
-                  Everything you need to know about our HTAP architecture.
+                  Everything you need to know about our Edge AI infrastructure.
                 </p>
               </div>
 

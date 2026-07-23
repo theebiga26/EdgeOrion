@@ -60,54 +60,14 @@ export default function AboutUs() {
                     <span className="text-xs font-bold text-primary uppercase tracking-widest">About Us</span>
                   </div>
                   <h2 className="text-3xl lg:text-5xl font-bold text-white leading-tight drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
-                    Trusted Source for Web3 Infrastructure
+                    Edge AI Infrastructure Platform
                   </h2>
                 </div>
                 
                 <div className="flex flex-col items-start mt-2 md:mt-10">
                   <p className="text-textMuted text-sm leading-relaxed mb-6 md:text-right">
-                    We empower developers and enterprises with hybrid database solutions that seamlessly merge on-chain security with off-chain performance. Building the backbone of the decentralized future.
+                    Edge Orion simplifies the deployment and management of AI workloads across distributed edge environments. Organizations operating cameras, IoT sensors, and remote devices rely on us for low-latency intelligence and centralized fleet management without relying solely on the cloud.
                   </p>
-                  
-                  {/* Enhanced CTA with Image */}
-                  <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="w-full p-3 rounded-2xl bg-[#0a0514]/80 backdrop-blur-md border border-white/10 flex items-center gap-4 group cursor-pointer hover:border-primary/40 transition-all shadow-[0_10px_30px_rgba(0,0,0,0.5)] overflow-hidden relative mt-auto"
-                  >
-                    {/* Hover Glow Effect */}
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-[40px] pointer-events-none group-hover:bg-primary/40 transition-colors duration-500"></div>
-                    
-                    {/* Thumbnail Image */}
-                    <div className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 relative border border-white/10 shadow-[0_0_15px_rgba(212,20,255,0.2)]">
-                      <img 
-                        src="/assets/images/ent_analytics.png" 
-                        alt="Get Started" 
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-tr from-primary/40 to-transparent mix-blend-overlay"></div>
-                    </div>
-                    
-                    {/* Text Content */}
-                    <div className="flex flex-col flex-grow z-10 text-left pl-2">
-                      <span className="text-white font-bold text-base md:text-lg group-hover:text-primary transition-colors drop-shadow-md">
-                        Start Building Today
-                      </span>
-                      <span className="text-white/60 text-xs font-medium mt-0.5">
-                        Access our developer resources
-                      </span>
-                    </div>
-                    
-                    {/* Action Icon */}
-                    <div className="w-10 h-10 flex-shrink-0 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-[0_0_15px_rgba(212,20,255,0.4)] group-hover:shadow-[0_0_25px_rgba(212,20,255,0.7)] transition-all z-10 mr-1">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </div>
-                  </motion.div>
                 </div>
               </div>
 

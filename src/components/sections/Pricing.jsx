@@ -6,7 +6,7 @@ const pricingPlans = [
     name: 'Developer',
     monthlyPrice: 0,
     annualPrice: 0,
-    description: 'Perfect for exploring and building small dapps.',
+    description: 'Perfect for evaluating Edge Orion.',
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white/80">
         <polyline points="16 18 22 12 16 6"></polyline>
@@ -14,13 +14,13 @@ const pricingPlans = [
       </svg>
     ),
     features: [
-      { text: 'Up to 10k queries/month', included: true },
+      { text: 'Up to 10 Edge Devices', included: true },
       { text: 'Community support', included: true },
-      { text: 'Basic analytics', included: true },
-      { text: 'Dedicated advanced cluster', included: false },
+      { text: 'Basic Telemetry', included: true },
+      { text: 'Advanced Deployment', included: false },
       { text: 'Custom SLAs', included: false }
     ],
-    ctaText: 'BUY NOW',
+    ctaText: 'START FREE',
     theme: {
       badge: 'bg-[#1a0f2e] border border-white/20 text-white',
       topBg: 'bg-[#150a21]',
@@ -29,20 +29,20 @@ const pricingPlans = [
     }
   },
   {
-    name: 'Pro',
+    name: 'Fleet',
     monthlyPrice: 99,
     annualPrice: 79,
-    description: 'For growing Web3 projects that need scale.',
+    description: 'For growing device fleets and sensor networks.',
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
       </svg>
     ),
     features: [
-      { text: 'Up to 1M queries/month', included: true },
+      { text: 'Up to 500 Edge Devices', included: true },
       { text: 'Priority email support', included: true },
-      { text: 'Advanced analytics', included: true },
-      { text: 'Dedicated basic cluster', included: true },
+      { text: 'Advanced Analytics', included: true },
+      { text: 'Fleet Management Dashboard', included: true },
       { text: 'Custom SLAs', included: false }
     ],
     ctaText: 'BUY NOW',
@@ -64,13 +64,13 @@ const pricingPlans = [
       </svg>
     ),
     features: [
-      { text: 'Unlimited queries', included: true },
-      { text: '24/7 dedicated support', included: true },
-      { text: 'Advanced analytics', included: true },
-      { text: 'Dedicated advanced cluster', included: true },
+      { text: 'Unlimited Devices', included: true },
+      { text: '24/7 Dedicated Support', included: true },
+      { text: 'Advanced Analytics', included: true },
+      { text: 'On-Premise Deployment', included: true },
       { text: 'Custom SLAs', included: true }
     ],
-    ctaText: 'BUY NOW',
+    ctaText: 'CONTACT US',
     theme: {
       badge: 'bg-[#110524] border border-secondary/50 text-white',
       topBg: 'bg-[#150a21]',

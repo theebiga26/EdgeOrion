@@ -4,8 +4,8 @@ import { FiGlobe, FiServer, FiCpu, FiPieChart, FiZap } from 'react-icons/fi';
 const ribbonSteps = [
   { 
     id: '01', 
-    title: 'Connect', 
-    desc: 'Seamlessly load data from any on-chain or off-chain source into our globally distributed decentralized cluster.',
+    title: 'Onboard Devices', 
+    desc: 'Seamlessly connect cameras, IoT sensors, and industrial equipment into the Edge Orion fleet management ecosystem.',
     icon: <FiGlobe />,
     grad: 'from-primary to-purple-600',
     fold: 'bg-purple-950',
@@ -13,8 +13,8 @@ const ribbonSteps = [
   },
   { 
     id: '02', 
-    title: 'Ingest', 
-    desc: 'Automatically normalize, encrypt, and index massive datasets in real-time across the Web3 network.',
+    title: 'Deploy AI', 
+    desc: 'Deploy and manage AI models across distributed edge infrastructure with intelligent workload orchestration.',
     icon: <FiServer />,
     grad: 'from-purple-600 to-indigo-600',
     fold: 'bg-indigo-950',
@@ -22,8 +22,8 @@ const ribbonSteps = [
   },
   { 
     id: '03', 
-    title: 'Process', 
-    desc: 'Run sub-second analytic queries alongside high-throughput transactions in a unified HTAP environment.',
+    title: 'Process Locally', 
+    desc: 'Process live video streams and sensor telemetry directly at the edge to drastically reduce cloud latency and bandwidth consumption.',
     icon: <FiCpu />,
     grad: 'from-indigo-600 to-secondary',
     fold: 'bg-blue-950',
@@ -31,8 +31,8 @@ const ribbonSteps = [
   },
   { 
     id: '04', 
-    title: 'Analyze', 
-    desc: 'Utilize zero-knowledge proofs (ZK) to ensure all data analytics and operations are cryptographically verifiable.',
+    title: 'Monitor Fleet', 
+    desc: 'Monitor device health, inference activity, and infrastructure network status from a centralized operational dashboard.',
     icon: <FiPieChart />,
     grad: 'from-secondary to-blue-600',
     fold: 'bg-blue-950',
@@ -40,8 +40,8 @@ const ribbonSteps = [
   },
   { 
     id: '05', 
-    title: 'Execute', 
-    desc: 'Produce verifiably tamperproof results that route securely and directly to your smart contracts for execution.',
+    title: 'Execute Autonomously', 
+    desc: 'Enable distributed devices to make intelligent, real-time autonomous decisions based on locally processed AI inference.',
     icon: <FiZap />,
     grad: 'from-blue-600 to-cyan-600',
     fold: 'bg-cyan-950',

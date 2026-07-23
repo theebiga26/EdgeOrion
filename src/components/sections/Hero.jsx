@@ -64,13 +64,13 @@ export default function Hero() {
                 className="flex-1 relative z-30 max-w-xl pr-4"
               >
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 text-primary drop-shadow-[0_0_15px_rgba(212,20,255,0.4)]">
-                  Digital Art Is <br />
-                  The Trend <br />
-                  Today
+                  Real-Time <br />
+                  Edge Intelligence <br />
+                  for Devices.
                 </h1>
                 
                 <p className="text-base text-white/70 mb-10 max-w-xl leading-relaxed">
-                  You don't need to be a genius to create digital art. All you need are design skills and some creativity. Once that's in place, follow this four-step process to protect your art with NFTs.
+                  Deploy, manage, and optimize AI workloads directly at the edge. Connect cameras, industrial devices, and sensors into a unified intelligent infrastructure for autonomous decision-making.
                 </p>
                 
                 <div className="flex items-center gap-8">
@@ -79,7 +79,7 @@ export default function Hero() {
                     whileTap={{ scale: 0.95 }}
                     className="px-8 py-3 bg-gradient-to-r from-primary/80 to-secondary/80 text-white text-sm font-bold rounded-tl-[30px] rounded-br-[30px] rounded-tr-[4px] rounded-bl-[4px] border border-white/10 shadow-[0_0_20px_rgba(212,20,255,0.3)] backdrop-blur-md hover:shadow-[0_0_30px_rgba(212,20,255,0.5)] transition-all"
                   >
-                    Explore Now
+                    Explore Platform
                   </motion.button>
                 </div>
               </motion.div>
