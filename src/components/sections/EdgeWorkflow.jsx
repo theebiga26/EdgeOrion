@@ -1,137 +1,246 @@
 import { motion } from 'framer-motion';
 import { FiGlobe, FiServer, FiCpu, FiPieChart, FiZap } from 'react-icons/fi';
 
-/* ─── Step data ─────────────────────────────────────────────────── */
+/* ─── Step data with architectural specifications ───────────────── */
 const STEPS = [
   {
     id: '01',
     title: 'Onboard Devices',
+    subtitle: 'Device Onboarding Layer',
     desc: 'Seamlessly connect cameras, IoT sensors, and industrial equipment into the Edge Orion fleet management ecosystem.',
     Icon: FiGlobe,
     color: '#D414FF',
-    glow: 'rgba(212,20,255,0.6)',
+    glow: 'rgba(212,20,255,0.65)',
+    specs: [
+      'Zero-Touch Node Auto-Discovery',
+      'Multi-Protocol IoT Integration',
+      'Encrypted Fleet Registration',
+    ],
   },
   {
     id: '02',
     title: 'Deploy AI',
+    subtitle: 'Model Orchestration Layer',
     desc: 'Deploy and manage AI models across distributed edge infrastructure with intelligent workload orchestration.',
     Icon: FiServer,
     color: '#AA0ACC',
-    glow: 'rgba(170,10,204,0.6)',
+    glow: 'rgba(170,10,204,0.65)',
+    specs: [
+      'Over-The-Air (OTA) Model Push',
+      'Dynamic Workload Balancing',
+      'Hardware-Accelerated Quantization',
+    ],
   },
   {
     id: '03',
     title: 'Process Locally',
+    subtitle: 'Edge Processing Layer',
     desc: 'Process video streams and sensor telemetry at the edge, drastically reducing cloud latency and bandwidth costs.',
     Icon: FiCpu,
     color: '#8800BB',
-    glow: 'rgba(136,0,187,0.6)',
+    glow: 'rgba(136,0,187,0.65)',
+    specs: [
+      'Sub-10ms Local AI Inference',
+      'Zero-Cloud Bandwidth Overhead',
+      'On-Device Stream Analytics',
+    ],
   },
   {
     id: '04',
     title: 'Monitor Fleet',
+    subtitle: 'Fleet Telemetry Layer',
     desc: 'Monitor device health, inference activity, and network status from a centralized operational dashboard.',
     Icon: FiPieChart,
     color: '#7A00E6',
-    glow: 'rgba(122,0,230,0.6)',
+    glow: 'rgba(122,0,230,0.65)',
+    specs: [
+      'Real-Time Distributed Logging',
+      'Predictive Hardware Diagnostics',
+      'Interactive Fleet Heatmaps',
+    ],
   },
   {
     id: '05',
     title: 'Execute Autonomously',
+    subtitle: 'Autonomous Execution Layer',
     desc: 'Enable distributed devices to make intelligent, real-time decisions based on locally processed AI inference.',
     Icon: FiZap,
     color: '#5C00D9',
-    glow: 'rgba(92,0,217,0.6)',
+    glow: 'rgba(92,0,217,0.65)',
+    specs: [
+      'Local Closed-Loop Automation',
+      'Real-Time Threat Mitigation',
+      'Autonomous Edge Failover',
+    ],
   },
 ];
 
-/* ─── Cyberpunk Arrow Card Component ────────────────────────────── */
-function ArrowCard({ step }) {
+/* ─── 3D Isometric Stacked Parallelogram Slab Component ─────────── */
+function IsometricSlabRow({ step, stepIndex }) {
   const { Icon } = step;
+
   return (
-    <div className="flex flex-col items-start text-left group cursor-pointer w-full">
-      {/* ── Chevron Arrow Badge ── */}
-      <div className="w-full" style={{ filter: `drop-shadow(0 4px 16px ${step.glow})` }}>
+    <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-6 lg:gap-8 w-full group cursor-pointer">
+      {/* ── 1. LEFT: 3D Isometric Parallelogram Slab (skewX(-24deg)) ── */}
+      <div
+        className="relative w-full lg:w-[440px] xl:w-[480px] flex-shrink-0 transition-all duration-300 group-hover:scale-[1.03] group-hover:translate-x-2"
+        style={{ filter: `drop-shadow(0 12px 28px ${step.glow})` }}
+      >
+        {/* 3D Extruded Thickness Layer underneath */}
         <div
-          className="relative w-full h-16 sm:h-20 transition-all duration-300 group-hover:scale-105 group-hover:translate-x-1"
+          className="absolute inset-0 rounded-2xl opacity-90 translate-y-2.5 translate-x-1.5"
           style={{
-            clipPath: 'polygon(0% 0%, 76% 0%, 100% 50%, 76% 100%, 0% 100%)',
-            background: `linear-gradient(135deg, ${step.color}ee, ${step.color}77)`,
+            transform: 'skewX(-22deg)',
+            background: `linear-gradient(to bottom, ${step.color}88, rgba(11,5,24,0.95))`,
+            border: `1px solid ${step.color}55`,
+          }}
+        />
+
+        {/* Main Top Glowing Glass Slab Face */}
+        <div
+          className="relative w-full h-20 sm:h-24 rounded-2xl flex items-center justify-between px-6 sm:px-8 overflow-hidden transition-all duration-300 group-hover:border-white/60"
+          style={{
+            transform: 'skewX(-22deg)',
+            background: `linear-gradient(135deg, ${step.color}ee 0%, ${step.color}88 55%, rgba(11,5,24,0.95) 100%)`,
+            border: `2px solid ${step.color}99`,
+            boxShadow: `inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -3px 12px ${step.glow}`,
           }}
         >
-          <div className="absolute inset-0 flex items-center justify-between pl-4 pr-7 sm:pl-5 sm:pr-9">
+          {/* Animated sweeping light shimmer across the slab */}
+          <motion.div
+            className="absolute inset-y-0 w-28 bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none"
+            animate={{
+              x: ['-200%', '450%'],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              repeatDelay: 1.5 + stepIndex * 0.4,
+              ease: 'easeInOut',
+            }}
+          />
+
+          {/* Un-skewed Content: LOGO FIRST on left, NUMBER SECOND, TITLE on right */}
+          <div className="flex items-center justify-between w-full" style={{ transform: 'skewX(22deg)' }}>
+            {/* LEFT: Logo 1st + Number 2nd */}
+            <div className="flex items-center gap-3.5">
+              {/* 1st: Logo inside glowing circular glass badge */}
+              <div
+                className="flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-white/40 bg-white/15 shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-transform duration-300 group-hover:rotate-12"
+                style={{
+                  boxShadow: `0 0 16px ${step.glow}, inset 0 0 8px rgba(255,255,255,0.35)`,
+                }}
+              >
+                <Icon
+                  className="text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.9)]"
+                  style={{ fontSize: 22 }}
+                />
+              </div>
+
+              {/* 2nd: Step Number */}
+              <span
+                className="text-2xl sm:text-3xl font-black text-white tracking-tight select-none"
+                style={{
+                  textShadow: `0 2px 12px rgba(0,0,0,0.85), 0 0 16px ${step.glow}`,
+                  fontFamily: 'Plus Jakarta Sans, sans-serif',
+                }}
+              >
+                {step.id}
+              </span>
+            </div>
+
+            {/* RIGHT INSIDE SLAB: Step Title */}
             <span
-              className="text-2xl sm:text-3xl font-black text-white"
+              className="text-sm sm:text-base xl:text-lg font-black uppercase tracking-wider text-white pr-2"
               style={{
-                textShadow: '0 2px 10px rgba(0,0,0,0.6)',
+                textShadow: `0 0 15px ${step.glow}`,
                 fontFamily: 'Plus Jakarta Sans, sans-serif',
               }}
             >
-              {step.id}
+              {step.title}
             </span>
-            <Icon
-              className="text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.9)]"
-              style={{ fontSize: 24 }}
-            />
           </div>
         </div>
       </div>
 
-      {/* ── Step Title & Description below Arrow ── */}
-      <div className="mt-6 text-left pr-2">
-        <h3
-          className="font-extrabold text-xs xl:text-sm uppercase tracking-wider mb-2"
-          style={{
-            color: step.color,
-            textShadow: `0 0 12px ${step.glow}`,
-            fontFamily: 'Plus Jakarta Sans, sans-serif',
-          }}
+      {/* ── 2. MIDDLE: Glowing Dotted Callout Line (Desktop only • - - - •) ── */}
+      <div className="hidden lg:flex items-center justify-center w-16 xl:w-24 flex-shrink-0">
+        <div className="flex items-center w-full">
+          <div
+            className="w-2 h-2 rounded-full flex-shrink-0"
+            style={{ backgroundColor: step.color, boxShadow: `0 0 10px ${step.color}` }}
+          />
+          <div
+            className="flex-1 h-0.5 border-t border-dashed mx-1"
+            style={{ borderColor: `${step.color}88` }}
+          />
+          <div
+            className="w-2 h-2 rounded-full flex-shrink-0"
+            style={{ backgroundColor: step.color, boxShadow: `0 0 10px ${step.color}` }}
+          />
+        </div>
+      </div>
+
+      {/* ── 3. RIGHT: Architectural Specifications & Bracket Panel ── */}
+      <div className="flex-1 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white/[0.02] lg:bg-transparent p-4 sm:p-5 lg:p-0 rounded-2xl border border-white/5 lg:border-none">
+        {/* Subtitle & Description */}
+        <div className="max-w-md">
+          <div className="flex items-center gap-2 mb-1.5">
+            <span
+              className="text-xs sm:text-sm font-extrabold uppercase tracking-widest"
+              style={{ color: step.color, textShadow: `0 0 12px ${step.glow}` }}
+            >
+              {step.subtitle}
+            </span>
+          </div>
+          <p className="text-white/75 text-xs sm:text-sm leading-relaxed font-normal">
+            {step.desc}
+          </p>
+        </div>
+
+        {/* Architectural Bracket List [ • spec 1, • spec 2, • spec 3 ] */}
+        <div
+          className="relative pl-5 sm:pl-6 border-l-2 py-1 flex flex-col gap-2 flex-shrink-0"
+          style={{ borderColor: step.color }}
         >
-          {step.title}
-        </h3>
-        <p className="text-white/70 text-xs leading-relaxed font-normal">
-          {step.desc}
-        </p>
+          {step.specs.map((spec, sIdx) => (
+            <div key={sIdx} className="flex items-center gap-2 text-xs sm:text-sm text-white/90 font-medium">
+              <div
+                className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                style={{ backgroundColor: step.color, boxShadow: `0 0 8px ${step.color}` }}
+              />
+              <span>{spec}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
 }
 
-/* ─── Cyberpunk Target Emblem Component (6th column) ─────────────── */
-function TargetEmblem() {
+/* ─── Vertical Abstraction / Evolution Arrow (Far Left) ─────────── */
+function AbstractionArrowAxis() {
   return (
-    <div className="flex flex-col items-center justify-start text-center group cursor-pointer w-full">
-      <div style={{ filter: 'drop-shadow(0 0 24px rgba(212,20,255,0.75))' }}>
-        <div
-          className="relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full transition-transform duration-500 group-hover:scale-110"
-          style={{
-            background: 'radial-gradient(circle, rgba(212,20,255,0.25) 0%, rgba(11,5,24,0.95) 75%)',
-            border: '2px solid #D414FF',
-            boxShadow: 'inset 0 0 20px rgba(212,20,255,0.6)',
-          }}
-        >
-          {/* Concentric glowing bullseye rings */}
-          <div className="absolute w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-primary/60 flex items-center justify-center">
-            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-primary/80 flex items-center justify-center bg-primary/25">
-              <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-primary shadow-[0_0_15px_#D414FF]" />
-            </div>
-          </div>
+    <div className="hidden xl:flex flex-col items-center justify-between py-4 pr-6 border-r border-white/10 text-white/50 select-none">
+      {/* Top Label */}
+      <div className="text-[11px] font-extrabold uppercase tracking-widest text-primary rotate-180 [writing-mode:vertical-rl] mb-3">
+        Concrete / Apex
+      </div>
+
+      {/* Upward Glowing Arrow Line */}
+      <div className="flex-1 flex flex-col items-center my-2">
+        <div className="w-0.5 flex-1 bg-gradient-to-t from-secondary via-primary to-white relative">
+          {/* Arrow head pointing UP at the top */}
+          <div
+            className="absolute -top-1 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-b-[8px] border-b-white"
+            style={{ filter: 'drop-shadow(0 0 8px #D414FF)' }}
+          />
         </div>
       </div>
 
-      <div className="mt-6 text-center">
-        <h3
-          className="font-extrabold text-xs xl:text-sm uppercase tracking-wider mb-2 text-primary"
-          style={{
-            textShadow: '0 0 15px rgba(212,20,255,0.85)',
-            fontFamily: 'Plus Jakarta Sans, sans-serif',
-          }}
-        >
-          EDGE TARGET
-        </h3>
-        <p className="text-white/70 text-xs leading-relaxed font-normal">
-          Autonomous, real-time edge AI execution achieved across all nodes.
-        </p>
+      {/* Bottom Label */}
+      <div className="text-[11px] font-extrabold uppercase tracking-widest text-secondary rotate-180 [writing-mode:vertical-rl] mt-3">
+        Abstract / Base
       </div>
     </div>
   );
@@ -139,6 +248,9 @@ function TargetEmblem() {
 
 /* ─── Main Section Component ────────────────────────────────────── */
 export default function EdgeWorkflow() {
+  // We stack the layers from Top (05, Surface/Apex) down to Bottom (01, Strategy/Foundation)
+  const stackedSteps = [STEPS[4], STEPS[3], STEPS[2], STEPS[1], STEPS[0]]; // 05 -> 01
+
   return (
     <section
       id="how-it-works"
@@ -210,72 +322,31 @@ export default function EdgeWorkflow() {
               How It Works
             </h2>
             <p className="mt-4 text-white/60 text-base max-w-xl mx-auto">
-              Five intelligent stages that power your edge AI infrastructure — from device onboarding to autonomous execution.
+              Five isometric architectural layers — from foundational device onboarding up to autonomous edge AI execution.
             </p>
           </div>
 
           {/* ══════════════════════════════════════════════
-              Desktop: Horizontal Arrow Pipeline + Target Emblem
+              3D Isometric Stacked Parallelogram Architecture
           ══════════════════════════════════════════════ */}
-          <div className="hidden lg:grid grid-cols-6 gap-4 xl:gap-6 items-start relative z-10 my-6">
-            {STEPS.map((step, i) => (
-              <motion.div
-                key={step.id}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="w-full"
-              >
-                <ArrowCard step={step} />
-              </motion.div>
-            ))}
+          <div className="flex items-stretch gap-8 relative z-10 my-8">
+            {/* Left Vertical Abstraction Axis Arrow (Desktop XL) */}
+            <AbstractionArrowAxis />
 
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="w-full"
-            >
-              <TargetEmblem />
-            </motion.div>
-          </div>
-
-          {/* ══════════════════════════════════════════════
-              Tablet & Mobile: Responsive Grid Stack
-          ══════════════════════════════════════════════ */}
-          <div className="grid lg:hidden grid-cols-1 sm:grid-cols-2 gap-8 relative z-10 my-6">
-            {STEPS.map((step, i) => (
-              <motion.div
-                key={step.id}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: i * 0.08 }}
-                className="w-full"
-              >
-                <ArrowCard step={step} />
-              </motion.div>
-            ))}
-
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: 0.4 }}
-              className="w-full sm:col-span-2 flex justify-center mt-4"
-            >
-              <div className="max-w-xs w-full">
-                <TargetEmblem />
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Bottom subtle divider/light */}
-          <div className="mt-16 border-t border-white/5 pt-8 flex items-center justify-between text-xs text-white/40">
-            <span>Edge Orion v3.4 — Enterprise Fleet Architecture</span>
-            <span>Zero-Latency Autonomous Nodes</span>
+            {/* Stacked 3D Isometric Slabs (05 Top -> 01 Bottom) */}
+            <div className="flex-1 flex flex-col gap-8 sm:gap-9">
+              {stackedSteps.map((step, idx) => (
+                <motion.div
+                  key={step.id}
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                >
+                  <IsometricSlabRow step={step} stepIndex={idx} />
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
