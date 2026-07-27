@@ -68,7 +68,7 @@ export default function Navbar() {
               href="#contact"
               className="bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-white font-bold py-2 px-6 rounded-tl-[30px] rounded-br-[30px] rounded-tr-[4px] rounded-bl-[4px] transition-all shadow-[0_0_20px_rgba(212,20,255,0.3)] hover:shadow-[0_0_30px_rgba(212,20,255,0.6)] hover:-translate-y-0.5 border border-white/10 text-sm hover:scale-105 focus:outline-none"
             >
-              Get Started
+              Orion EdgeOS V1.10
             </a>
           </div>
 
@@ -109,7 +109,7 @@ export default function Navbar() {
                     onClick={() => setIsOpen(false)}
                     className="w-full bg-gradient-to-r from-primary to-secondary text-white font-bold py-3 px-6 rounded-tl-[30px] rounded-br-[30px] rounded-tr-[4px] rounded-bl-[4px] transition-colors shadow-lg"
                   >
-                    Get Started
+                    Orion EdgeOS V1.10
                   </a>
                 </div>
               </div>
