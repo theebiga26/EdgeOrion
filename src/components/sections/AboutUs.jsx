@@ -60,13 +60,13 @@ export default function AboutUs() {
                     <span className="text-xs font-bold text-primary uppercase tracking-widest">About Us</span>
                   </div>
                   <h2 className="text-3xl lg:text-5xl font-bold text-white leading-tight drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
-                    Edge AI Infrastructure Platform
+                    Intelligence That Moves Closer to Every Decision
                   </h2>
                 </div>
                 
                 <div className="flex flex-col items-start mt-2 md:mt-10">
                   <p className="text-textMuted text-sm leading-relaxed mb-6 md:text-right">
-                    Edge Orion simplifies the deployment and management of AI workloads across distributed edge environments. Organizations operating cameras, IoT sensors, and remote devices rely on us for low-latency intelligence and centralized fleet management without relying solely on the cloud.
+                    Edge Orion empowers enterprises to deploy, manage, and optimize AI across distributed devices, camera systems, and sensor networks. Our unified Edge AI platform delivers real-time intelligence, centralized fleet management, and scalable infrastructure that enables faster decisions, greater operational efficiency, and resilient edge operations.
                   </p>
                 </div>
               </div>

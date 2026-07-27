@@ -72,15 +72,16 @@ export default function CTA() {
                 Join leading organizations orchestrating device fleets, cameras, and sensor networks with Edge Orion today.
               </p>
 
-              {/* Reverted back to standard Contact Us Button */}
-              <motion.button
+              {/* Contact Us Button — scrolls to #contact */}
+              <motion.a
+                href="#contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-12 py-4 bg-[#120a24] border border-primary/40 text-white font-bold rounded-tl-[30px] rounded-br-[30px] rounded-tr-[4px] rounded-bl-[4px] shadow-[0_0_30px_rgba(212,20,255,0.2)] hover:shadow-[0_0_40px_rgba(212,20,255,0.5)] hover:border-primary transition-all duration-300 text-sm tracking-widest uppercase relative overflow-hidden group"
+                className="inline-block px-12 py-4 bg-[#120a24] border border-primary/40 text-white font-bold rounded-tl-[30px] rounded-br-[30px] rounded-tr-[4px] rounded-bl-[4px] shadow-[0_0_30px_rgba(212,20,255,0.2)] hover:shadow-[0_0_40px_rgba(212,20,255,0.5)] hover:border-primary transition-all duration-300 text-sm tracking-widest uppercase relative overflow-hidden group cursor-pointer"
               >
                 <span className="relative z-10">Contact Us</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 z-0"></div>
-              </motion.button>
+              </motion.a>
             </motion.div>
 
             {/* Right Image Column */}

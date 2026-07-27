@@ -113,15 +113,8 @@ export default function EnterpriseScale() {
                 Empowering teams to manage thousands of distributed cameras, sensors, and remote devices from a single centralized Operations Dashboard.
               </p>
               
-              <motion.button 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-gradient-to-r from-primary/80 to-secondary/80 text-white font-bold rounded-tl-[30px] rounded-br-[30px] rounded-tr-[4px] rounded-bl-[4px] text-base flex items-center gap-2 border border-white/10 shadow-[0_0_20px_rgba(212,20,255,0.3)] backdrop-blur-md hover:shadow-[0_0_30px_rgba(212,20,255,0.5)] transition-all"
-              >
-                View Documentation
-                <HiOutlineArrowRight className="text-lg" />
-              </motion.button>
-              
+
+
             </div>
           </div>
 

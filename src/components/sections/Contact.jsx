@@ -59,7 +59,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-white font-semibold">Phone</p>
-                    <p className="text-sm">0511 - 43 22 99</p>
+                    <p className="text-sm">+1 (213) 555-0106</p>
                   </div>
                 </div>
                 
@@ -72,7 +72,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-white font-semibold">Website</p>
-                    <p className="text-sm">www.edgeorion.io</p>
+                    <p className="text-sm">https://edgeorion.net</p>
                   </div>
                 </div>
               </div>
@@ -90,22 +90,22 @@ export default function Contact() {
                 <div className="flex flex-col sm:flex-row gap-5">
                   <div className="w-full">
                     <label className="text-sm text-textMuted font-medium mb-2 block">Your Name</label>
-                    <input type="text" placeholder="John Doe" className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm shadow-inner" required />
+                    <input type="text" placeholder="John Doe" className="w-full bg-black/40 border border-white/30 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm shadow-inner" required />
                   </div>
                   <div className="w-full">
                     <label className="text-sm text-textMuted font-medium mb-2 block">Email Address</label>
-                    <input type="email" placeholder="john@example.com" className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm shadow-inner" required />
+                    <input type="email" placeholder="john@example.com" className="w-full bg-black/40 border border-white/30 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm shadow-inner" required />
                   </div>
                 </div>
                 
                 <div className="w-full">
                   <label className="text-sm text-textMuted font-medium mb-2 block">Subject</label>
-                  <input type="text" placeholder="How can we help?" className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm shadow-inner" required />
+                  <input type="text" placeholder="How can we help?" className="w-full bg-black/40 border border-white/30 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm shadow-inner" required />
                 </div>
                 
                 <div className="w-full">
                   <label className="text-sm text-textMuted font-medium mb-2 block">Message</label>
-                  <textarea placeholder="Write your message here..." rows="5" className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm shadow-inner resize-none" required></textarea>
+                  <textarea placeholder="Write your message here..." rows="5" className="w-full bg-black/40 border border-white/30 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm shadow-inner resize-none" required></textarea>
                 </div>
                 
                 <motion.button 

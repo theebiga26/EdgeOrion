@@ -60,20 +60,14 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Middle Column: Brand & Buttons */}
+          {/* Middle Column: Brand */}
           <div className="flex flex-col items-center text-center">
             <h2 className="text-4xl lg:text-5xl font-black text-white tracking-tight leading-none mb-4">
               Edge Orion
             </h2>
-            <p className="italic text-textMuted font-serif text-lg mb-10">
-              Intelligent infrastructure at the edge
+            <p className="text-textMuted text-sm leading-relaxed max-w-xs">
+              Edge Orion is a unified Edge AI platform empowering enterprises to deploy, manage, and scale intelligent operations across distributed devices, camera networks, and sensor infrastructure — in real time, at the edge.
             </p>
-            
-            <div className="flex w-full justify-center">
-              <a href="#contact" className="bg-gradient-to-r from-primary to-secondary hover:from-primaryHover hover:to-secondary text-white font-semibold py-3 px-8 rounded-tl-[30px] rounded-br-[30px] rounded-tr-[4px] rounded-bl-[4px] transition-all flex items-center justify-center gap-4 hover:scale-105 active:scale-95 text-sm sm:text-base shadow-glow border border-primary/50">
-                Get Started <span className="bg-white/20 rounded-full p-1"><FaArrowRight className="text-xs" /></span>
-              </a>
-            </div>
           </div>
 
           {/* Right Column: Quick Links */}

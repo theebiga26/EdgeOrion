@@ -3,11 +3,11 @@ import { useState } from 'react';
 import { HiOutlinePlus, HiOutlineMinus, HiPhone } from 'react-icons/hi';
 
 const faqs = [
-  { question: "Does Edge Orion support NVIDIA Jetson devices?", answer: "Yes. Our Edge AI deployment engine provides seamless integration with NVIDIA Jetson devices and the JetPack SDK, enabling high-performance distributed inference directly on the edge." },
-  { question: "How does the platform reduce latency?", answer: "By processing live video streams and sensor data locally on edge devices rather than streaming all raw data to the cloud, Edge Orion drastically reduces round-trip latency and bandwidth consumption." },
-  { question: "Can I manage devices across different geographic locations?", answer: "Absolutely. The Edge Operations Dashboard provides centralized fleet management, allowing you to monitor and orchestrate devices across any number of remote or distributed geographic locations." },
-  { question: "Does the platform work offline?", answer: "Yes. Once an AI model is deployed to an edge device, inference continues to run locally even if cloud connectivity is temporarily lost, ensuring uninterrupted operational intelligence." },
-  { question: "What types of cameras are supported?", answer: "Edge Orion is agnostic to camera hardware. We support any IP camera or RTSP stream that can connect to your edge gateways, allowing you to easily scale your visual intelligence network." }
+  { question: "01. What makes Edge Orion different from traditional IoT platforms?", answer: "Edge Orion goes beyond device connectivity by combining Edge AI deployment, intelligent fleet management, computer vision, and sensor intelligence into one unified operational platform. It enables organizations to process data closer to where it is generated and make faster, smarter decisions in real time." },
+  { question: "02. Can Edge Orion manage large-scale device networks?", answer: "Yes. Edge Orion is designed for distributed environments with hundreds or thousands of connected devices. The platform provides centralized fleet visibility, remote management, AI workload orchestration, and infrastructure monitoring across multiple locations." },
+  { question: "03. How does Edge Orion improve AI performance at the edge?", answer: "By running AI workloads closer to the data source, Edge Orion reduces dependency on cloud processing, minimizes latency, and enables real-time inference for applications such as computer vision, industrial automation, and intelligent monitoring systems." },
+  { question: "04. What types of devices and systems can connect with Edge Orion?", answer: "Edge Orion supports a wide range of intelligent infrastructure, including AI-enabled devices, cameras, industrial equipment, IoT gateways, connected sensors, and enterprise systems through flexible integration capabilities." },
+  { question: "05. Is Edge Orion suitable for enterprise-scale deployments?", answer: "Yes. Edge Orion is built for organizations that require secure, scalable, and reliable edge operations. From smart facilities to industrial environments, the platform provides the foundation needed to deploy and manage AI-powered infrastructure at scale." }
 ];
 
 export default function FAQ() {
@@ -31,17 +31,17 @@ export default function FAQ() {
         {/* Main Bounding Box */}
         <div className="relative w-full border border-primary/20 rounded-xl p-8 md:p-12 backdrop-blur-sm bg-background/60 shadow-[0_0_40px_rgba(0,0,0,0.8)] overflow-hidden moving-border">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 lg:items-stretch">
             
             {/* Left Column: Cards */}
-            <div className="col-span-1 lg:col-span-4 flex flex-col gap-6">
+            <div className="col-span-1 lg:col-span-4 flex flex-col">
               
               {/* Image Card */}
               <motion.div 
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="relative h-[350px] md:h-[400px] rounded-2xl overflow-hidden group border border-white/10"
+                className="relative flex-1 min-h-[400px] rounded-2xl overflow-hidden group border border-white/10"
               >
                 <img 
                   src="/assets/images/faq_support.png" 
@@ -56,34 +56,13 @@ export default function FAQ() {
                   <h3 className="text-3xl font-bold text-white mb-3 leading-tight drop-shadow-lg">
                     Need Custom<br/>Solutions?
                   </h3>
-                  <p className="text-sm text-white/80 mb-6 leading-relaxed">
+                  <p className="text-sm text-white/80 leading-relaxed">
                     Our Edge AI engineers are ready to architect your distributed intelligence infrastructure.
                   </p>
-                  <button className="bg-gradient-to-r from-primary to-secondary text-white font-bold py-3 px-8 rounded-tl-[30px] rounded-br-[30px] rounded-tr-[4px] rounded-bl-[4px] text-sm shadow-[0_0_20px_rgba(212,20,255,0.4)] hover:shadow-[0_0_30px_rgba(212,20,255,0.6)] transition-all hover:scale-105 active:scale-95">
-                    Learn More
-                  </button>
                 </div>
               </motion.div>
 
-              {/* Contact Call Card */}
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="bg-black/40 border border-white/10 rounded-2xl p-8 flex flex-col items-center justify-center text-center hover:border-primary/40 transition-colors shadow-lg"
-              >
-                <div className="w-14 h-14 bg-primary/20 rounded-full flex items-center justify-center mb-5 text-primary text-2xl shadow-[0_0_15px_rgba(212,20,255,0.3)]">
-                  <HiPhone />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Contact Us</h3>
-                <p className="text-sm text-textMuted mb-8 leading-relaxed max-w-[250px]">
-                  24/7 dedicated support for Enterprise fleet operators.
-                </p>
-                <button className="w-full bg-primary/10 text-primary border border-primary/50 font-bold py-3 rounded-tl-[30px] rounded-br-[30px] rounded-tr-[4px] rounded-bl-[4px] text-sm hover:bg-primary hover:text-white transition-all hover:shadow-[0_0_20px_rgba(212,20,255,0.4)]">
-                  Call Now
-                </button>
-              </motion.div>
+
 
             </div>
 
@@ -97,10 +76,10 @@ export default function FAQ() {
                   <span className="text-xs font-bold text-primary uppercase tracking-widest">F.A.Q</span>
                 </div>
                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-                  Frequently Asked Questions
+                  Understanding Edge Orion
                 </h2>
-                <p className="text-textMuted text-lg">
-                  Everything you need to know about our Edge AI infrastructure.
+                <p className="text-textMuted text-base leading-relaxed max-w-xl">
+                  Find answers about our Edge AI platform, intelligent device management, distributed AI operations, and enterprise deployment capabilities.
                 </p>
               </div>
 

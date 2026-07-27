@@ -4,38 +4,38 @@ import { motion, AnimatePresence } from 'framer-motion';
 const testimonials = [
   {
     id: 1,
-    name: 'Arlene McCoy',
-    role: 'Lead Edge AI Engineer',
-    feedback: 'Deploying deep learning models to NVIDIA Jetson fleets used to take us days of manual scripting. With Edge Orion, we compile, version, and sync models globally with a single click.',
-    avatar: 'https://i.pravatar.cc/150?u=1'
+    name: 'Daniel Whitmore',
+    role: 'Director of Industrial Technology, United Kingdom',
+    feedback: 'Edge Orion gave us the visibility and control needed to manage complex device networks across multiple locations. We can now deploy AI workloads faster and monitor every edge operation from one unified platform.',
+    avatar: 'https://i.pravatar.cc/150?u=11'
   },
   {
     id: 2,
-    name: 'Eleanor Pena',
-    role: 'Director of Smart Cities',
-    feedback: 'Managing over 5,000 traffic and safety cameras across the metropolitan area was an operational nightmare. Edge Orion processes video streams locally, alerting us to critical events with zero cloud latency.',
-    avatar: 'https://i.pravatar.cc/150?u=2'
+    name: 'Olivia Bennett',
+    role: 'Head of Digital Infrastructure, United States',
+    feedback: 'Managing thousands of connected devices used to require multiple disconnected systems. Edge Orion created a single intelligence layer that improved our operational efficiency and simplified AI deployment.',
+    avatar: 'https://i.pravatar.cc/150?u=12'
   },
   {
     id: 3,
-    name: 'Wade Warren',
-    role: 'Lead Robotics Engineer',
-    feedback: 'Integrating our industrial gateways with JetPack and DeepStream was seamless. We reduced local inference processing times down to single-digit milliseconds while maintaining absolute reliability on the factory floor.',
-    avatar: 'https://i.pravatar.cc/150?u=3'
+    name: 'Ethan Caldwell',
+    role: 'AI Solutions Architect, United States',
+    feedback: 'The ability to process intelligence directly at the edge has changed how we approach real-time analytics. Edge Orion helps our teams make faster decisions while maintaining reliable performance at scale.',
+    avatar: 'https://i.pravatar.cc/150?u=13'
   },
   {
     id: 4,
-    name: 'Jacob Jones',
-    role: 'Head of Distributed Systems',
-    feedback: 'Scaling to thousands of remote IoT devices while maintaining local autonomy has transformed our infrastructure. Telemetry stream syncing is robust, and the offline mode keeps our operations running smoothly.',
-    avatar: 'https://i.pravatar.cc/150?u=4'
+    name: 'Charlotte Richardson',
+    role: 'Technology Strategy Lead, United Kingdom',
+    feedback: 'Edge Orion bridges the gap between IoT infrastructure and enterprise AI operations. It provides the flexibility and control required for our next generation of connected systems.',
+    avatar: 'https://i.pravatar.cc/150?u=14'
   },
   {
     id: 5,
-    name: 'Esther Howard',
-    role: 'VP of Enterprise Infrastructure',
-    feedback: 'Security and compliance at the edge were critical. Edge Orion\'s local processing limits sensitive data transmission, checking off all our enterprise privacy requirements while maximizing bandwidth savings.',
-    avatar: 'https://i.pravatar.cc/150?u=5'
+    name: 'James Anderson',
+    role: 'VP of Engineering, United States',
+    feedback: 'From camera intelligence to sensor analytics, Edge Orion provides a powerful foundation for building smarter environments. It has become an essential layer in our distributed AI strategy.',
+    avatar: 'https://i.pravatar.cc/150?u=15'
   }
 ];
 
@@ -111,10 +111,10 @@ export default function Testimonials() {
               <span className="text-xs font-bold text-primary uppercase tracking-widest">Testimonials</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-[0_0_15px_rgba(212,20,255,0.3)]">
-              What our Customers say
+              Trusted by Teams Building the Future of Intelligent Infrastructure
             </h2>
-            <p className="text-textMuted text-sm max-w-2xl mx-auto">
-              Discover how industry leaders are leveraging our Web3 native tools and hybrid database solutions.
+            <p className="text-textMuted text-sm max-w-2xl mx-auto leading-relaxed">
+              Real-world insights from engineering leaders, operations teams, and technology innovators using Edge AI to transform distributed environments.
             </p>
           </div>
 

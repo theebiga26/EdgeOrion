@@ -64,13 +64,13 @@ export default function Hero() {
                 className="flex-1 relative z-30 max-w-xl pr-4"
               >
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 text-primary drop-shadow-[0_0_15px_rgba(212,20,255,0.4)]">
-                  Real-Time <br />
-                  Edge Intelligence <br />
-                  for Connected Devices.
+                  Real-Time Intelligence.<br />
+                  <span className="text-white">Wherever Your</span> <br />
+                  Infrastructure Operates.
                 </h1>
                 
                 <p className="text-base text-white/70 mb-10 max-w-xl leading-relaxed">
-                  Deploy, manage, and optimize AI workloads directly at the edge. Connect cameras, industrial devices, and sensors into a unified intelligent infrastructure for autonomous decision-making.
+                  Modern enterprises no longer operate from a single location. Intelligence now lives inside manufacturing facilities, transportation networks, retail environments, utility infrastructure, logistics hubs, and smart campuses.
                 </p>
                 
                 <div className="flex items-center gap-8">

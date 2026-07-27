@@ -5,9 +5,9 @@ import { FiGlobe, FiServer, FiCpu, FiPieChart, FiZap } from 'react-icons/fi';
 const STEPS = [
   {
     id: '01',
-    title: 'Onboard Devices',
-    subtitle: 'Device Onboarding Layer',
-    desc: 'Seamlessly connect cameras, IoT sensors, and industrial equipment into the Edge Orion fleet management ecosystem.',
+    title: 'Connect Intelligent Infrastructure',
+    subtitle: 'Infrastructure Connection Layer',
+    desc: 'Edge Orion establishes secure connections across distributed infrastructure, creating a foundation for real-time AI operations and centralized visibility.',
     Icon: FiGlobe,
     color: '#D414FF',
     glow: 'rgba(212,20,255,0.65)',
@@ -19,9 +19,9 @@ const STEPS = [
   },
   {
     id: '02',
-    title: 'Deploy AI',
+    title: 'Deploy AI Workloads at the Edge',
     subtitle: 'Model Orchestration Layer',
-    desc: 'Deploy and manage AI models across distributed edge infrastructure with intelligent workload orchestration.',
+    desc: 'Deploy, update, and manage AI workloads across edge devices to enable faster processing, reduced latency, and efficient distributed inference.',
     Icon: FiServer,
     color: '#AA0ACC',
     glow: 'rgba(170,10,204,0.65)',
@@ -33,9 +33,9 @@ const STEPS = [
   },
   {
     id: '03',
-    title: 'Process Locally',
+    title: 'Orchestrate Distributed Operations',
     subtitle: 'Edge Processing Layer',
-    desc: 'Process video streams and sensor telemetry at the edge, drastically reducing cloud latency and bandwidth costs.',
+    desc: 'Edge Orion manages device fleets, AI deployments, and infrastructure resources with automated workflows designed for scalable enterprise environments.',
     Icon: FiCpu,
     color: '#8800BB',
     glow: 'rgba(136,0,187,0.65)',
@@ -47,9 +47,9 @@ const STEPS = [
   },
   {
     id: '04',
-    title: 'Monitor Fleet',
+    title: 'Analyze Real-Time Intelligence',
     subtitle: 'Fleet Telemetry Layer',
-    desc: 'Monitor device health, inference activity, and network status from a centralized operational dashboard.',
+    desc: 'Process video streams, sensor telemetry, and device data locally to detect events, monitor performance, and support faster decision-making.',
     Icon: FiPieChart,
     color: '#7A00E6',
     glow: 'rgba(122,0,230,0.65)',
@@ -61,9 +61,9 @@ const STEPS = [
   },
   {
     id: '05',
-    title: 'Execute Autonomously',
+    title: 'Optimize and Scale Continuously',
     subtitle: 'Autonomous Execution Layer',
-    desc: 'Enable distributed devices to make intelligent, real-time decisions based on locally processed AI inference.',
+    desc: 'Monitor infrastructure health, optimize AI workloads, and expand edge operations seamlessly as organizations grow their intelligent device networks.',
     Icon: FiZap,
     color: '#5C00D9',
     glow: 'rgba(92,0,217,0.65)',
@@ -121,9 +121,9 @@ function IsometricSlabRow({ step, stepIndex }) {
           />
 
           {/* Un-skewed Content: LOGO FIRST on left, NUMBER SECOND, TITLE on right */}
-          <div className="flex items-center justify-between w-full" style={{ transform: 'skewX(22deg)' }}>
+          <div className="flex items-center w-full gap-4" style={{ transform: 'skewX(22deg)' }}>
             {/* LEFT: Logo 1st + Number 2nd */}
-            <div className="flex items-center gap-3.5">
+            <div className="flex items-center gap-3.5 flex-shrink-0">
               {/* 1st: Logo inside glowing circular glass badge */}
               <div
                 className="flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-white/40 bg-white/15 shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-transform duration-300 group-hover:rotate-12"
@@ -149,9 +149,15 @@ function IsometricSlabRow({ step, stepIndex }) {
               </span>
             </div>
 
+            {/* Glowing Vertical Divider */}
+            <div
+              className="w-px h-8 flex-shrink-0 opacity-70"
+              style={{ background: `linear-gradient(to bottom, transparent, ${step.color}, transparent)` }}
+            />
+
             {/* RIGHT INSIDE SLAB: Step Title */}
             <span
-              className="text-sm sm:text-base xl:text-lg font-black uppercase tracking-wider text-white pr-2"
+              className="flex-1 text-sm sm:text-base xl:text-lg font-black uppercase tracking-wider text-white pr-2"
               style={{
                 textShadow: `0 0 15px ${step.glow}`,
                 fontFamily: 'Plus Jakarta Sans, sans-serif',
