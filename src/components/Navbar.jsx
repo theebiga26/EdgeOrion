@@ -32,6 +32,15 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Set active link from URL hash on initial load
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const matching = navLinks.find((link) => link.href === hash);
+      if (matching) setActiveLink(matching.name);
+    }
+  }, []);
+
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 px-4 pointer-events-none transition-all duration-300">
       <nav className="pointer-events-auto w-full md:w-max bg-[#0a0514]/70 backdrop-blur-xl border border-white/20 rounded-full px-4 md:px-8 py-3 shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
@@ -50,7 +59,7 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className={`relative ${activeLink === link.name ? 'text-white' : 'text-white/70'} hover:text-primary transition-colors text-sm font-semibold tracking-wide duration-300 hover:scale-105 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full focus:outline-none`}
+                className={`relative ${activeLink === link.name ? 'text-white after:w-full' : 'text-white/70'} hover:text-primary transition-colors text-sm font-semibold tracking-wide duration-300 hover:scale-105 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full focus:outline-none`}
               >
                 {link.name}
               </a>
