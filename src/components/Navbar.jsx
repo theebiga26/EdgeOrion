@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenu, HiX } from 'react-icons/hi';
 
 const navLinks = [
-  { name: 'Home', href: '#' },
+  { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
-  { name: 'Features', href: '#features' },
+  { name: 'How It Works', href: '#how-it-works' },
   { name: 'Pricing', href: '#pricing' },
   { name: 'Contact', href: '#contact' },
 ];
@@ -36,9 +36,9 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
-            <button className="bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-white font-bold py-2 px-6 rounded-tl-[30px] rounded-br-[30px] rounded-tr-[4px] rounded-bl-[4px] transition-all shadow-[0_0_20px_rgba(212,20,255,0.3)] hover:shadow-[0_0_30px_rgba(212,20,255,0.6)] hover:-translate-y-0.5 border border-white/10 text-sm">
-              Product
-            </button>
+            <a href="#contact" className="bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-white font-bold py-2 px-6 rounded-tl-[30px] rounded-br-[30px] rounded-tr-[4px] rounded-bl-[4px] transition-all shadow-[0_0_20px_rgba(212,20,255,0.3)] hover:shadow-[0_0_30px_rgba(212,20,255,0.6)] hover:-translate-y-0.5 border border-white/10 text-sm">
+              Get Started
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -73,9 +73,9 @@ export default function Navbar() {
                   </a>
                 ))}
                 <div className="pt-2 border-t border-white/10">
-                  <button className="w-full bg-gradient-to-r from-primary to-secondary text-white font-bold py-3 px-6 rounded-tl-[30px] rounded-br-[30px] rounded-tr-[4px] rounded-bl-[4px] transition-colors shadow-lg">
-                    Product
-                  </button>
+                  <a href="#contact" onClick={() => setIsOpen(false)} className="block w-full text-center bg-gradient-to-r from-primary to-secondary text-white font-bold py-3 px-6 rounded-tl-[30px] rounded-br-[30px] rounded-tr-[4px] rounded-bl-[4px] transition-colors shadow-lg">
+                    Get Started
+                  </a>
                 </div>
               </div>
             </motion.div>

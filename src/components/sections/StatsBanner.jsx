@@ -31,9 +31,9 @@ function AnimatedCounter({ from, to, duration = 2, suffix = '', prefix = '', dec
 export default function StatsBanner() {
   const stats = [
     { label: "Uptime Rate", from: 0, to: 99.9, decimals: 1, suffix: "%", delay: 0 },
-    { label: "Queries Served", from: 0, to: 245, decimals: 0, suffix: "M+", delay: 0.1 },
+    { label: "AI Inferences", from: 0, to: 245, decimals: 0, suffix: "M+", delay: 0.1 },
     { label: "Global Nodes", from: 0, to: 54, decimals: 0, suffix: "+", delay: 0.2 },
-    { label: "Smart Contracts", from: 0, to: 12, decimals: 0, suffix: "K+", delay: 0.3 },
+    { label: "Models Deployed", from: 0, to: 12, decimals: 0, suffix: "K+", delay: 0.3 },
     { label: "Avg Latency", from: 100, to: 5, decimals: 0, suffix: "ms", delay: 0.4 },
   ];
 

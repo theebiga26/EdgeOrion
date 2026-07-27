@@ -2,7 +2,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/sections/Hero'
 import StatsBanner from './components/sections/StatsBanner'
 import AboutUs from './components/sections/AboutUs'
-import Transactions from './components/sections/Transactions'
+import EdgeWorkflow from './components/sections/EdgeWorkflow'
 import Documentation from './components/sections/Documentation'
 import EnterpriseScale from './components/sections/EnterpriseScale'
 import Pricing from './components/sections/Pricing'
@@ -14,6 +14,7 @@ import Footer from './components/Footer'
 import CyberBackground from './components/ui/CyberBackground'
 import CustomCursor from './components/ui/CustomCursor'
 import CookieConsent from './components/ui/CookieConsent'
+
 function App() {
   return (
     <div className="relative min-h-screen bg-background">
@@ -37,18 +38,18 @@ function App() {
         <main>
           <Hero />
           <StatsBanner />
-        <AboutUs />
-        <Transactions />
-        <Documentation />
-        <EnterpriseScale />
-        <Pricing />
-        <Testimonials />
-        <FAQ />
-        <CTA />
-        <Contact />
-      </main>
+          <AboutUs />
+          <EdgeWorkflow />
+          <Documentation />
+          <EnterpriseScale />
+          <Pricing />
+          <Testimonials />
+          <FAQ />
+          <CTA />
+          <Contact />
+        </main>
 
-      <Footer />
+        <Footer />
       </div>
     </div>
   )

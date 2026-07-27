@@ -45,7 +45,7 @@ export default function FAQ() {
               >
                 <img 
                   src="/assets/images/faq_support.png" 
-                  alt="Web3 Support" 
+                  alt="Edge Orion Support" 
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 {/* Gradient Overlay */}

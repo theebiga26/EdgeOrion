@@ -46,7 +46,7 @@ export default function CTA() {
                 {/* Main Polaroid Image */}
                 <div className="relative overflow-hidden rounded-2xl border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.8)] transition-transform duration-500 group-hover:rotate-3 group-hover:scale-[1.02]">
                   <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-500"></div>
-                  <img src="/images/team_left.png" alt="Web3 Team Collaborating" className="w-full h-auto object-cover aspect-[4/5]" />
+                  <img src="/images/team_left.png" alt="Edge Orion Team Collaborating" className="w-full h-auto object-cover aspect-[4/5]" />
                 </div>
               </div>
             </motion.div>
@@ -61,15 +61,15 @@ export default function CTA() {
             >
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(212,20,255,0.8)]"></div>
-                <span className="text-xs font-bold text-primary uppercase tracking-widest">Web3 Decentralized Network</span>
+                <span className="text-xs font-bold text-primary uppercase tracking-widest">Enterprise Edge AI Platform</span>
               </div>
 
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.1] drop-shadow-[0_0_20px_rgba(212,20,255,0.2)]">
-                Ready to scale the <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">decentralized future?</span>
+                Ready to scale your <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">distributed intelligence?</span>
               </h2>
 
               <p className="text-white/60 text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-                Join thousands of developers building on Edge Orion's high-performance hybrid infrastructure today.
+                Join leading organizations orchestrating device fleets, cameras, and sensor networks with Edge Orion today.
               </p>
 
               {/* Reverted back to standard Contact Us Button */}
@@ -103,7 +103,7 @@ export default function CTA() {
                 {/* Main Polaroid Image */}
                 <div className="relative overflow-hidden rounded-2xl border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.8)] transition-transform duration-500 group-hover:-rotate-3 group-hover:scale-[1.02]">
                   <div className="absolute inset-0 bg-secondary/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-500"></div>
-                  <img src="/images/team_right.png" alt="Web3 Team Engineering" className="w-full h-auto object-cover aspect-[4/5]" />
+                  <img src="/images/team_right.png" alt="Edge Orion Team Engineering" className="w-full h-auto object-cover aspect-[4/5]" />
                 </div>
               </div>
             </motion.div>

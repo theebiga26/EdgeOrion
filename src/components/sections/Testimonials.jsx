@@ -5,36 +5,36 @@ const testimonials = [
   {
     id: 1,
     name: 'Arlene McCoy',
-    role: 'Germany',
-    feedback: 'Space and Time is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+    role: 'Lead Edge AI Engineer',
+    feedback: 'Deploying deep learning models to NVIDIA Jetson fleets used to take us days of manual scripting. With Edge Orion, we compile, version, and sync models globally with a single click.',
     avatar: 'https://i.pravatar.cc/150?u=1'
   },
   {
     id: 2,
     name: 'Eleanor Pena',
-    role: 'United States',
-    feedback: 'The ability to join on-chain and off-chain data seamlessly has revolutionized how we build dapps. The HTAP cluster performance is unmatched, giving us sub-second query times that were previously impossible.',
+    role: 'Director of Smart Cities',
+    feedback: 'Managing over 5,000 traffic and safety cameras across the metropolitan area was an operational nightmare. Edge Orion processes video streams locally, alerting us to critical events with zero cloud latency.',
     avatar: 'https://i.pravatar.cc/150?u=2'
   },
   {
     id: 3,
     name: 'Wade Warren',
-    role: 'United Kingdom',
-    feedback: 'Integrating with existing Web3 stacks was incredibly easy. The native support for ethers.js and Chainlink oracles means our team didn\'t have to learn new frameworks or overhaul our architecture.',
+    role: 'Lead Robotics Engineer',
+    feedback: 'Integrating our industrial gateways with JetPack and DeepStream was seamless. We reduced local inference processing times down to single-digit milliseconds while maintaining absolute reliability on the factory floor.',
     avatar: 'https://i.pravatar.cc/150?u=3'
   },
   {
     id: 4,
     name: 'Jacob Jones',
-    role: 'Canada',
-    feedback: 'Scaling to petabytes while maintaining cryptographically guaranteed tamperproof results is a game-changer for enterprise blockchain applications. Storage is elastic and query execution is rock solid.',
+    role: 'Head of Distributed Systems',
+    feedback: 'Scaling to thousands of remote IoT devices while maintaining local autonomy has transformed our infrastructure. Telemetry stream syncing is robust, and the offline mode keeps our operations running smoothly.',
     avatar: 'https://i.pravatar.cc/150?u=4'
   },
   {
     id: 5,
     name: 'Esther Howard',
-    role: 'Australia',
-    feedback: 'Security and privacy were our top concerns, but the built-in encryption and ability to handle private off-chain data securely exceeded all our enterprise compliance requirements.',
+    role: 'VP of Enterprise Infrastructure',
+    feedback: 'Security and compliance at the edge were critical. Edge Orion\'s local processing limits sensitive data transmission, checking off all our enterprise privacy requirements while maximizing bandwidth savings.',
     avatar: 'https://i.pravatar.cc/150?u=5'
   }
 ];

@@ -63,10 +63,10 @@ export default function Footer() {
           {/* Middle Column: Brand & Buttons */}
           <div className="flex flex-col items-center text-center">
             <h2 className="text-4xl lg:text-5xl font-black text-white tracking-tight leading-none mb-4">
-              Edge Orion <br /> Protocol
+              Edge Orion
             </h2>
             <p className="italic text-textMuted font-serif text-lg mb-10">
-              Where the decentralized future begins
+              Intelligent infrastructure at the edge
             </p>
             
             <div className="flex w-full justify-center">
@@ -81,9 +81,9 @@ export default function Footer() {
             <h3 className="text-2xl font-bold mb-2 lg:text-right w-full text-white">Quick Links</h3>
             <div className="w-full lg:w-auto text-textMuted">
               <ul className="space-y-4 text-[15px] lg:text-right">
-                <li><a href="#" className="hover:text-primary transition-colors block">Home</a></li>
+                <li><a href="#home" className="hover:text-primary transition-colors block">Home</a></li>
                 <li><a href="#about" className="hover:text-primary transition-colors block">About</a></li>
-                <li><a href="#features" className="hover:text-primary transition-colors block">Features</a></li>
+                <li><a href="#how-it-works" className="hover:text-primary transition-colors block">How It Works</a></li>
                 <li><a href="#pricing" className="hover:text-primary transition-colors block">Pricing</a></li>
                 <li><a href="#contact" className="hover:text-primary transition-colors block">Contact</a></li>
               </ul>

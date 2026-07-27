@@ -66,7 +66,7 @@ export default function Hero() {
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 text-primary drop-shadow-[0_0_15px_rgba(212,20,255,0.4)]">
                   Real-Time <br />
                   Edge Intelligence <br />
-                  for Devices.
+                  for Connected Devices.
                 </h1>
                 
                 <p className="text-base text-white/70 mb-10 max-w-xl leading-relaxed">

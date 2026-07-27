@@ -46,7 +46,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-white font-semibold">Email Us</p>
-                    <p className="text-sm">hello@edgeorion.io</p>
+                    <p className="text-sm">hello@edgeorion.net</p>
                   </div>
                 </div>
                 

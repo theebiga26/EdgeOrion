@@ -49,7 +49,7 @@ const ribbonSteps = [
   }
 ];
 
-export default function Transactions() {
+export default function EdgeWorkflow() {
   return (
     <section className="relative py-32 border-t border-white/10 bg-transparent overflow-hidden" id="how-it-works">
       
@@ -85,7 +85,6 @@ export default function Transactions() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.15 }}
-                  // Removed dark shadow, added dynamic bright glowing shadow
                   className={`relative flex items-center w-full min-h-[140px] group transition-all duration-300 hover:scale-[1.02] ${isEven ? 'pr-[40px] md:pr-[60px] justify-end' : 'pl-[40px] md:pl-[60px]'}`}
                   style={{ filter: `drop-shadow(0 0 6px ${step.glow})` }}
                 >
@@ -105,7 +104,6 @@ export default function Transactions() {
                         style={{ clipPath: isEven ? 'polygon(100% 0, 0 100%, 100% 100%)' : 'polygon(0 0, 0 100%, 100% 100%)' }}></div>
 
                    {/* Main Banner (Chevron arrow pointing left or right) */}
-                   {/* Removed border-black, added bright inner glass border */}
                    <div className={`w-full bg-[#0a0514]/90 backdrop-blur-xl border border-white/10 flex items-center py-8 md:py-10 relative z-10 transition-all duration-300 group-hover:bg-[#120a24] ${isEven ? 'pr-[70px] md:pr-[90px] pl-[70px] md:pl-32 flex-row-reverse text-right' : 'pl-[70px] md:pl-[90px] pr-[70px] md:pr-32'}`}
                         style={{ 
                           marginTop: '24px', 
