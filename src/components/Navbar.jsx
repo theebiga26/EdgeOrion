@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenu, HiX } from 'react-icons/hi';
 
@@ -12,6 +12,25 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('');
+
+  // Update active link based on scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + 150; // offset for early activation
+      let current = '';
+      navLinks.forEach((link) => {
+        const section = document.querySelector(link.href);
+        if (section && scrollPos >= section.offsetTop) {
+          current = link.name;
+        }
+      });
+      setActiveLink(current);
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // initial check
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 px-4 pointer-events-none transition-all duration-300">
@@ -31,12 +50,15 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-white/70 hover:text-primary transition-colors text-sm font-semibold tracking-wide"
+                className={`relative ${activeLink === link.name ? 'text-white' : 'text-white/70'} hover:text-primary transition-colors text-sm font-semibold tracking-wide duration-300 hover:scale-105 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full focus:outline-none`}
               >
                 {link.name}
               </a>
             ))}
-            <a href="#contact" className="bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-white font-bold py-2 px-6 rounded-tl-[30px] rounded-br-[30px] rounded-tr-[4px] rounded-bl-[4px] transition-all shadow-[0_0_20px_rgba(212,20,255,0.3)] hover:shadow-[0_0_30px_rgba(212,20,255,0.6)] hover:-translate-y-0.5 border border-white/10 text-sm">
+            <a
+              href="#contact"
+              className="bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-white font-bold py-2 px-6 rounded-tl-[30px] rounded-br-[30px] rounded-tr-[4px] rounded-bl-[4px] transition-all shadow-[0_0_20px_rgba(212,20,255,0.3)] hover:shadow-[0_0_30px_rgba(212,20,255,0.6)] hover:-translate-y-0.5 border border-white/10 text-sm hover:scale-105 focus:outline-none"
+            >
               Get Started
             </a>
           </div>
@@ -73,7 +95,11 @@ export default function Navbar() {
                   </a>
                 ))}
                 <div className="pt-2 border-t border-white/10">
-                  <a href="#contact" onClick={() => setIsOpen(false)} className="block w-full text-center bg-gradient-to-r from-primary to-secondary text-white font-bold py-3 px-6 rounded-tl-[30px] rounded-br-[30px] rounded-tr-[4px] rounded-bl-[4px] transition-colors shadow-lg">
+                  <a
+                    href="#contact"
+                    onClick={() => setIsOpen(false)}
+                    className="w-full bg-gradient-to-r from-primary to-secondary text-white font-bold py-3 px-6 rounded-tl-[30px] rounded-br-[30px] rounded-tr-[4px] rounded-bl-[4px] transition-colors shadow-lg"
+                  >
                     Get Started
                   </a>
                 </div>

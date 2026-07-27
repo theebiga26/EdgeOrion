@@ -136,13 +136,13 @@ export default function Pricing() {
           </div>
 
           {/* Pricing Cards */}
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-12 lg:gap-8 relative z-10 mt-12 pb-12">
+          <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-12 lg:gap-8 relative z-10 mt-8 pb-8">
             {pricingPlans.map((plan, index) => {
               const isCenter = index === 1;
               return (
                 <div 
                   key={plan.name} 
-                  className={`relative w-full max-w-sm flex flex-col pt-6 transition-all duration-500 ${isCenter ? 'lg:-translate-y-4 lg:scale-105 z-20' : 'z-10'}`}
+                  className={`relative w-full max-w-xs flex flex-col pt-2 transition-all duration-500 ${isCenter ? 'lg:-translate-y-4 lg:scale-105 z-20' : 'z-10'}`}
                   style={{ filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.6))' }}
                 >
                   
@@ -152,7 +152,7 @@ export default function Pricing() {
                     style={{ clipPath: 'polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%)' }}
                   >
                     {/* Top Section */}
-                    <div className={`${plan.theme.topBg} flex flex-col items-center pt-12 pb-8 px-6 text-center border-b border-white/5`}>
+                    <div className={`${plan.theme.topBg} flex flex-col items-center pt-8 pb-4 px-6 text-center border-b border-white/5`}>
                       
                       {/* Icon */}
                       <div className="mb-4">
@@ -161,7 +161,7 @@ export default function Pricing() {
 
                       <div className="flex items-start justify-center gap-1 mb-2">
                         <span className="text-2xl font-bold text-white mt-2">$</span>
-                        <span className="text-6xl font-black text-white tracking-tighter">
+                        <span className="text-5xl font-black text-white tracking-tighter">
                           {isAnnual ? plan.annualPrice : plan.monthlyPrice}
                         </span>
                       </div>
@@ -172,8 +172,8 @@ export default function Pricing() {
                     </div>
 
                     {/* Bottom Colored Section */}
-                    <div className={`${plan.theme.bottomBg} flex flex-col px-8 md:px-10 pt-10 pb-24 flex-grow`}>
-                      <div className="flex flex-col gap-5 mb-10">
+                    <div className={`${plan.theme.bottomBg} flex flex-col px-6 md:px-8 pt-6 pb-12 flex-grow backdrop-blur-md`}>
+                      <div className="flex flex-col gap-3 mb-10">
                         {plan.features.map((feature, i) => (
                           <div key={i} className="flex items-center gap-4">
                             <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-md">
