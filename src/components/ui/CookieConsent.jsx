@@ -31,7 +31,7 @@ export default function CookieConsent() {
           animate={{ y: 0, opacity: 1, scale: 1 }}
           exit={{ y: 80, opacity: 0, scale: 0.95 }}
           transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-          className="fixed bottom-6 left-4 right-4 sm:left-auto sm:right-6 z-[100] max-w-lg p-4 sm:px-5 sm:py-4 bg-[#0b0518]/95 backdrop-blur-2xl border border-primary/40 rounded-2xl shadow-[0_10px_35px_rgba(0,0,0,0.85),0_0_25px_rgba(212,20,255,0.25)]"
+          className="fixed bottom-6 left-4 right-4 sm:right-auto sm:left-6 z-[100] max-w-lg p-4 sm:px-5 sm:py-4 bg-[#0b0518]/95 backdrop-blur-2xl border border-primary/40 rounded-2xl shadow-[0_10px_35px_rgba(0,0,0,0.85),0_0_25px_rgba(212,20,255,0.25)]"
         >
           <div className="flex flex-col sm:flex-row items-center gap-4 justify-between">
             {/* Left: Glowing Icon & Concise Copy */}
