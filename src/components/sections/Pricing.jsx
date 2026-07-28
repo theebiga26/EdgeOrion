@@ -22,6 +22,7 @@ const pricingPlans = [
     ],
     ctaText: "Get Started",
     ctaStyle: "border border-white/20 text-white hover:bg-white/10 hover:border-white/40",
+    ctaLink: "#contact",
   },
   {
     id: "enterprise",
@@ -44,6 +45,7 @@ const pricingPlans = [
     ],
     ctaText: "Choose Enterprise",
     ctaStyle: "bg-gradient-to-r from-primary to-secondary text-white shadow-[0_0_20px_rgba(212,20,255,0.4)] hover:shadow-[0_0_30px_rgba(212,20,255,0.7)]",
+    ctaLink: "#contact",
   },
   {
     id: "autonomous",
@@ -66,6 +68,7 @@ const pricingPlans = [
     ],
     ctaText: "Contact Sales",
     ctaStyle: "border border-secondary/50 text-white hover:bg-secondary/20 hover:border-secondary",
+    ctaLink: "#contact",
   },
 ];
 
@@ -217,13 +220,14 @@ export default function Pricing() {
 
                   {/* CTA Button — pinned to bottom */}
                   <div className="px-7 pb-8 pt-2 mt-auto">
-                    <motion.button
+                    <motion.a
+                      href={plan.ctaLink || "#contact"}
                       whileHover={{ scale: 1.03 }}
                       whileTap={{ scale: 0.97 }}
-                      className={`w-full py-3.5 rounded-tl-[24px] rounded-br-[24px] rounded-tr-[4px] rounded-bl-[4px] font-bold text-sm tracking-wider transition-all ${plan.ctaStyle}`}
+                      className={`block text-center w-full py-3.5 rounded-tl-[24px] rounded-br-[24px] rounded-tr-[4px] rounded-bl-[4px] font-bold text-sm tracking-wider transition-all ${plan.ctaStyle}`}
                     >
                       {plan.ctaText}
-                    </motion.button>
+                    </motion.a>
                   </div>
                 </motion.div>
               );

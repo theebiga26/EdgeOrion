@@ -1,21 +1,115 @@
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+  const [turnstileToken, setTurnstileToken] = useState(null);
+  const [status, setStatus] = useState(null); // null | 'submitting' | 'success' | 'error'
+
+  useEffect(() => {
+    let interval;
+    const initTurnstile = () => {
+      if (typeof window !== 'undefined' && window.turnstile) {
+        clearInterval(interval);
+        try {
+          const container = document.getElementById('cf-turnstile-container');
+          if (container && container.innerHTML === '') {
+            const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+            const activeSiteKey = isLocalhost 
+              ? '1x00000000000000000000AA' // Test sitekey (always passes on localhost)
+              : '0x4AAAAAAD_lf9SUPwHT35-C'; // Your production sitekey
+
+            window.turnstile.render('#cf-turnstile-container', {
+              sitekey: activeSiteKey,
+              theme: 'dark',
+              callback: (token) => {
+                setTurnstileToken(token);
+                if (status === 'error') setStatus(null);
+              },
+              'error-callback': () => {
+                setStatus('error');
+              }
+            });
+          }
+        } catch (err) {
+          console.error('Error rendering Cloudflare Turnstile:', err);
+        }
+      }
+    };
+
+    interval = setInterval(initTurnstile, 500);
+    initTurnstile();
+
+    return () => clearInterval(interval);
+  }, [status]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!turnstileToken) {
+      setStatus('error');
+      return;
+    }
+
+    setStatus('submitting');
+
+    try {
+      const response = await fetch('https://formspree.io/f/meeynodq', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          'cf-turnstile-response': turnstileToken
+        })
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        if (typeof window !== 'undefined' && window.turnstile) {
+          window.turnstile.reset('#cf-turnstile-container');
+          setTurnstileToken(null);
+        }
+      } else {
+        setStatus('error');
+      }
+    } catch (err) {
+      console.error('Formspree submission error:', err);
+      setStatus('error');
+    }
+  };
+
   return (
     <section id="contact" className="py-24 relative bg-transparent overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Full Bounding Box Container */}
         <div className="relative w-full border border-primary/20 rounded-3xl p-12 md:p-20 backdrop-blur-md bg-[#0a0514]/80 shadow-[0_0_60px_rgba(0,0,0,0.9)] overflow-hidden moving-border">
-          
+
           {/* Abstract glows inside the box */}
           <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-            
+
             {/* Left Side: Text & Info */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -26,15 +120,15 @@ export default function Contact() {
                 <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(212,20,255,0.8)]"></div>
                 <span className="text-xs font-bold text-primary uppercase tracking-widest">Get In Touch</span>
               </div>
-              
+
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
-                Let's build the <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">future together.</span>
+                Let's build the <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">future together.</span>
               </h2>
-              
+
               <p className="text-white/60 text-lg leading-relaxed mt-4 max-w-md">
                 Whether you have a technical question, want to explore partnership opportunities, or just need more information, our team is here to help.
               </p>
-              
+
               <div className="flex flex-col gap-6 mt-8">
                 {/* Email */}
                 <div className="flex items-center gap-4 text-textMuted">
@@ -46,10 +140,10 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-white font-semibold">Email Us</p>
-                    <p className="text-sm">hello@edgeorion.net</p>
+                    <p className="text-sm">support@edgeorion.net</p>
                   </div>
                 </div>
-                
+
                 {/* Phone */}
                 <div className="flex items-center gap-4 text-textMuted">
                   <div className="w-12 h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center text-primary">
@@ -62,7 +156,7 @@ export default function Contact() {
                     <p className="text-sm">+1 (213) 555-0106</p>
                   </div>
                 </div>
-                
+
                 {/* Website */}
                 <div className="flex items-center gap-4 text-textMuted">
                   <div className="w-12 h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center text-primary">
@@ -79,42 +173,66 @@ export default function Contact() {
             </motion.div>
 
             {/* Right Side: Form Container */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative w-full"
             >
-              <form className="w-full flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
+              <form className="w-full flex flex-col gap-5" onSubmit={handleSubmit}>
                 <div className="flex flex-col sm:flex-row gap-5">
                   <div className="w-full">
                     <label className="text-sm text-textMuted font-medium mb-2 block">Your Name</label>
-                    <input type="text" placeholder="John Doe" className="w-full bg-black/40 border border-white/30 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm shadow-inner" required />
+                    <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="John Doe" className="w-full bg-black/40 border border-white/30 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm shadow-inner" required />
                   </div>
                   <div className="w-full">
                     <label className="text-sm text-textMuted font-medium mb-2 block">Email Address</label>
-                    <input type="email" placeholder="john@example.com" className="w-full bg-black/40 border border-white/30 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm shadow-inner" required />
+                    <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="john@example.com" className="w-full bg-black/40 border border-white/30 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm shadow-inner" required />
                   </div>
                 </div>
-                
+
                 <div className="w-full">
                   <label className="text-sm text-textMuted font-medium mb-2 block">Subject</label>
-                  <input type="text" placeholder="How can we help?" className="w-full bg-black/40 border border-white/30 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm shadow-inner" required />
+                  <input type="text" name="subject" value={formData.subject} onChange={handleChange} placeholder="How can we help?" className="w-full bg-black/40 border border-white/30 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm shadow-inner" required />
                 </div>
-                
+
                 <div className="w-full">
                   <label className="text-sm text-textMuted font-medium mb-2 block">Message</label>
-                  <textarea placeholder="Write your message here..." rows="5" className="w-full bg-black/40 border border-white/30 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm shadow-inner resize-none" required></textarea>
+                  <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Write your message here..." rows="5" className="w-full bg-black/40 border border-white/30 rounded-xl px-4 py-3.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm shadow-inner resize-none" required></textarea>
                 </div>
-                
-                <motion.button 
+
+                {/* Cloudflare Turnstile Container */}
+                <div className="flex justify-center my-2">
+                  <div id="cf-turnstile-container" className="relative z-20"></div>
+                </div>
+
+                <AnimatePresence>
+                  {status === 'submitting' && (
+                    <motion.div initial={{ opacity: 0, y: -5 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="text-xs text-primary animate-pulse font-medium text-center">
+                      Sending your message securely...
+                    </motion.div>
+                  )}
+                  {status === 'success' && (
+                    <motion.div initial={{ opacity: 0, y: -5 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="text-xs text-green-400 font-medium border border-green-500/20 bg-green-500/10 p-3 rounded-xl text-center">
+                      ✓ Success! Message sent securely.
+                    </motion.div>
+                  )}
+                  {status === 'error' && (
+                    <motion.div initial={{ opacity: 0, y: -5 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="text-xs text-red-400 font-medium border border-red-500/20 bg-red-500/10 p-3 rounded-xl text-center">
+                      ✗ Please complete the security check (CAPTCHA) to send a message.
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   type="submit"
-                  className="w-full mt-4 px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-tl-[30px] rounded-br-[30px] rounded-tr-[4px] rounded-bl-[4px] shadow-[0_0_20px_rgba(212,20,255,0.3)] hover:shadow-[0_0_30px_rgba(212,20,255,0.6)] hover:border-primary transition-all duration-300 text-sm tracking-widest uppercase relative overflow-hidden group"
+                  disabled={status === 'submitting'}
+                  className="w-full mt-2 px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-tl-[30px] rounded-br-[30px] rounded-tr-[4px] rounded-bl-[4px] shadow-[0_0_20px_rgba(212,20,255,0.3)] hover:shadow-[0_0_30px_rgba(212,20,255,0.6)] hover:border-primary transition-all duration-300 text-sm tracking-widest uppercase relative overflow-hidden group disabled:opacity-50"
                 >
-                  <span className="relative z-10">Send Message</span>
+                  <span className="relative z-10">{status === 'submitting' ? 'Sending...' : 'Send Message'}</span>
                 </motion.button>
               </form>
             </motion.div>

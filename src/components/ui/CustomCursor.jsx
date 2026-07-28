@@ -1,22 +1,38 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function CustomCursor() {
-  const [position, setPosition] = useState({ x: -100, y: -100 });
+  const cursorRef = useRef(null);
+  const hoverRef = useRef(false);
   const [isHovering, setIsHovering] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
+  // Sync state to ref to avoid re-registering event listeners when hover status changes
+  useEffect(() => {
+    hoverRef.current = isHovering;
+  }, [isHovering]);
+
   useEffect(() => {
     const updatePosition = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-      if (!isVisible) setIsVisible(true);
+      if (!isVisible) {
+        setIsVisible(true);
+      }
+      
+      if (cursorRef.current) {
+        const offset = hoverRef.current ? 10 : 6;
+        cursorRef.current.style.transform = `translate3d(${e.clientX - offset}px, ${e.clientY - offset}px, 0)`;
+      }
     };
 
     const handleMouseOver = (e) => {
-      // Check if hovering over interactive elements
-      if (['A', 'BUTTON', 'INPUT', 'TEXTAREA'].includes(e.target.tagName) || e.target.closest('a') || e.target.closest('button')) {
-        setIsHovering(true);
-      } else {
-        setIsHovering(false);
+      const target = e.target;
+      if (!target) return;
+      
+      const shouldHover = ['A', 'BUTTON', 'INPUT', 'TEXTAREA'].includes(target.tagName) || 
+                          target.closest('a') || 
+                          target.closest('button');
+      
+      if (hoverRef.current !== !!shouldHover) {
+        setIsHovering(!!shouldHover);
       }
     };
 
@@ -41,9 +57,11 @@ export default function CustomCursor() {
   return (
     <div className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden">
       <div 
+        ref={cursorRef}
         className={`absolute top-0 left-0 rounded-full transition-all duration-150 ease-out ${isHovering ? 'w-5 h-5 bg-white' : 'w-3 h-3 bg-primary'}`}
         style={{
-          transform: `translate(${position.x - (isHovering ? 10 : 6)}px, ${position.y - (isHovering ? 10 : 6)}px)`,
+          transform: 'translate3d(-100px, -100px, 0)',
+          willChange: 'transform',
         }}
       ></div>
     </div>

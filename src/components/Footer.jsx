@@ -1,9 +1,9 @@
 import { FaArrowRight, FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaPinterest } from 'react-icons/fa';
 
-export default function Footer() {
+export default function Footer({ onOpenPolicy }) {
   return (
     <footer className="relative bg-[#05020a] text-textBase pt-32 pb-6 mt-32 rounded-t-[3rem] lg:rounded-t-[4rem] z-10 font-sans border-t border-white/10">
-      
+
       {/* Topographic background pattern */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-t-[3rem] lg:rounded-t-[4rem]">
         {/* Background glow */}
@@ -11,12 +11,12 @@ export default function Footer() {
         {/* Topographic Lines */}
         <div className="absolute inset-0 opacity-10">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <path d="M-100 100 Q 200 400 500 100 T 1100 100" stroke="white" strokeWidth="1" fill="none"/>
-            <path d="M-100 200 Q 200 500 500 200 T 1100 200" stroke="white" strokeWidth="1" fill="none"/>
-            <path d="M-100 300 Q 200 600 500 300 T 1100 300" stroke="white" strokeWidth="1" fill="none"/>
-            <path d="M-100 400 Q 200 700 500 400 T 1100 400" stroke="white" strokeWidth="1" fill="none"/>
-            <path d="M-100 500 Q 200 800 500 500 T 1100 500" stroke="white" strokeWidth="1" fill="none"/>
-            <path d="M-100 600 Q 200 900 500 600 T 1100 600" stroke="white" strokeWidth="1" fill="none"/>
+            <path d="M-100 100 Q 200 400 500 100 T 1100 100" stroke="white" strokeWidth="1" fill="none" />
+            <path d="M-100 200 Q 200 500 500 200 T 1100 200" stroke="white" strokeWidth="1" fill="none" />
+            <path d="M-100 300 Q 200 600 500 300 T 1100 300" stroke="white" strokeWidth="1" fill="none" />
+            <path d="M-100 400 Q 200 700 500 400 T 1100 400" stroke="white" strokeWidth="1" fill="none" />
+            <path d="M-100 500 Q 200 800 500 500 T 1100 500" stroke="white" strokeWidth="1" fill="none" />
+            <path d="M-100 600 Q 200 900 500 600 T 1100 600" stroke="white" strokeWidth="1" fill="none" />
           </svg>
         </div>
       </div>
@@ -32,10 +32,10 @@ export default function Footer() {
       </div>
 
       <div className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10 flex flex-col">
-        
+
         {/* Main 3-Column Footer Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-8 mt-8">
-          
+
           {/* Left Column: Contact */}
           <div className="flex flex-col gap-6 text-textBase">
             <h3 className="text-2xl font-bold mb-2 text-white">Follow Us</h3>
@@ -88,16 +88,16 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-16 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-textMuted w-full">
-           <div className="font-medium">
-             © 2026 Edge Orion. All rights reserved.
-           </div>
-           <div className="flex gap-6 font-medium">
-             <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
-             <a href="#" className="hover:text-primary transition-colors">Cookies policy</a>
-             <a href="#" className="hover:text-primary transition-colors">Privacy policy</a>
-           </div>
+          <div className="font-medium">
+            © 2026 Edge Orion. All rights reserved.
+          </div>
+          <div className="flex gap-6 font-medium">
+            <button onClick={() => onOpenPolicy && onOpenPolicy('terms')} className="hover:text-primary transition-colors focus:outline-none">Terms of Service</button>
+            <button onClick={() => onOpenPolicy && onOpenPolicy('cookies')} className="hover:text-primary transition-colors focus:outline-none">Cookies policy</button>
+            <button onClick={() => onOpenPolicy && onOpenPolicy('privacy')} className="hover:text-primary transition-colors focus:outline-none">Privacy policy</button>
+          </div>
         </div>
-        
+
       </div>
     </footer>
   );

@@ -1,11 +1,15 @@
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import ThreeBackground from '../ui/ThreeBackground';
 import Navbar from '../Navbar';
 
 export default function Hero() {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { margin: "200px 0px" });
+
   return (
-    <section id="home" className="relative min-h-screen pt-20 pb-12 flex items-center justify-center overflow-hidden bg-transparent">
-      <ThreeBackground />
+    <section ref={sectionRef} id="home" className="relative min-h-screen pt-20 pb-12 flex items-center justify-center overflow-hidden bg-transparent">
+      {isInView && <ThreeBackground />}
       
       {/* Background Perspective Grid */}
       <div className="absolute inset-0 opacity-10 pointer-events-none -z-10 flex items-center justify-center overflow-hidden perspective-[1000px]">

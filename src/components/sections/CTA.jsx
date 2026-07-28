@@ -46,7 +46,7 @@ export default function CTA() {
                 {/* Main Polaroid Image */}
                 <div className="relative overflow-hidden rounded-2xl border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.8)] transition-transform duration-500 group-hover:rotate-3 group-hover:scale-[1.02]">
                   <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-500"></div>
-                  <img src="/images/team_left.png" alt="Edge Orion Team Collaborating" className="w-full h-auto object-cover aspect-[4/5]" />
+                  <img src="/images/team_left.png" alt="Edge Orion Team Collaborating" className="w-full h-auto object-cover aspect-[4/5]" loading="lazy" />
                 </div>
               </div>
             </motion.div>
@@ -104,7 +104,7 @@ export default function CTA() {
                 {/* Main Polaroid Image */}
                 <div className="relative overflow-hidden rounded-2xl border border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.8)] transition-transform duration-500 group-hover:-rotate-3 group-hover:scale-[1.02]">
                   <div className="absolute inset-0 bg-secondary/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-500"></div>
-                  <img src="/images/team_right.png" alt="Edge Orion Team Engineering" className="w-full h-auto object-cover aspect-[4/5]" />
+                  <img src="/images/team_right.png" alt="Edge Orion Team Engineering" className="w-full h-auto object-cover aspect-[4/5]" loading="lazy" />
                 </div>
               </div>
             </motion.div>

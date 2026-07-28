@@ -41,6 +41,7 @@ export default function AboutUs() {
                   src="/assets/images/about_us_portrait.png" 
                   alt="Web3 Developer" 
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
               </motion.div>
@@ -85,6 +86,7 @@ export default function AboutUs() {
                     src="/assets/images/about_us_landscape.png" 
                     alt="Global Data Network" 
                     className="w-full h-full object-cover opacity-80"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-tr from-background via-transparent to-primary/20 opacity-60"></div>
                 </div>

@@ -141,6 +141,7 @@ export default function EnterpriseScale() {
                     src={feature.image} 
                     alt={feature.title} 
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+                    loading="lazy"
                   />
                   
                   {/* Gradients */}

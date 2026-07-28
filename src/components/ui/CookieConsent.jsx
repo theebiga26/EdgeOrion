@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiShield, FiCheck } from 'react-icons/fi';
 
-export default function CookieConsent() {
+export default function CookieConsent({ onOpenPolicy }) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -44,12 +44,12 @@ export default function CookieConsent() {
               </div>
               <p className="text-white/85 text-xs sm:text-sm leading-snug font-normal">
                 We use cookies to improve your experience. See our{' '}
-                <a
-                  href="#privacy"
-                  className="text-primary hover:text-white underline decoration-primary/60 hover:decoration-white transition-colors font-semibold"
+                <button
+                  onClick={() => onOpenPolicy && onOpenPolicy('privacy')}
+                  className="text-primary hover:text-white underline decoration-primary/60 hover:decoration-white transition-colors font-semibold focus:outline-none align-baseline"
                 >
                   Privacy Policy
-                </a>
+                </button>
                 .
               </p>
             </div>

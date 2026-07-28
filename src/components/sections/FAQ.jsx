@@ -47,6 +47,7 @@ export default function FAQ() {
                   src="/assets/images/faq_support.png" 
                   alt="Edge Orion Support" 
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
                 />
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0514] via-[#0a0514]/70 to-transparent"></div>
