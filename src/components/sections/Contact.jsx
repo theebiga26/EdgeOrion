@@ -100,7 +100,7 @@ export default function Contact() {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Full Bounding Box Container */}
-        <div className="relative w-full border border-primary/20 rounded-3xl p-12 md:p-20 backdrop-blur-md bg-[#0a0514]/80 shadow-[0_0_60px_rgba(0,0,0,0.9)] overflow-hidden moving-border">
+        <div className="relative w-full border border-primary/20 rounded-3xl p-6 sm:p-12 md:p-20 backdrop-blur-md bg-[#0a0514]/80 shadow-[0_0_60px_rgba(0,0,0,0.9)] overflow-hidden moving-border">
 
           {/* Abstract glows inside the box */}
           <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>

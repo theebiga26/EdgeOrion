@@ -53,7 +53,7 @@ export default function Navbar({ onGoHome }) {
             <img 
               src="/images/logo.svg" 
               alt="Edge Orion Logo" 
-              className="w-24 md:w-32 h-8 md:h-10 object-contain filter drop-shadow-[0_0_8px_rgba(212,20,255,0.5)] group-hover:drop-shadow-[0_0_12px_rgba(212,20,255,0.8)] transition-all duration-300 group-hover:scale-105" 
+              className="w-32 sm:w-36 md:w-48 h-10 sm:h-11 md:h-14 object-contain filter drop-shadow-[0_0_8px_rgba(212,20,255,0.5)] group-hover:drop-shadow-[0_0_12px_rgba(212,20,255,0.8)] transition-all duration-300 group-hover:scale-105" 
             />
           </button>
 
@@ -111,7 +111,7 @@ export default function Navbar({ onGoHome }) {
                   <a
                     href="#contact"
                     onClick={() => setIsOpen(false)}
-                    className="w-full bg-gradient-to-r from-primary to-secondary text-white font-bold py-3 px-6 rounded-tl-[30px] rounded-br-[30px] rounded-tr-[4px] rounded-bl-[4px] transition-colors shadow-lg"
+                    className="block w-full text-center bg-gradient-to-r from-primary to-secondary text-white font-bold py-3 px-6 rounded-tl-[30px] rounded-br-[30px] rounded-tr-[4px] rounded-bl-[4px] transition-colors shadow-lg"
                   >
                     Orion EdgeOS V1.10
                   </a>

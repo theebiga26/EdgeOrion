@@ -85,9 +85,8 @@ function IsometricSlabRow({ step, stepIndex }) {
       >
         {/* 3D Extruded Thickness Layer underneath */}
         <div
-          className="absolute inset-0 rounded-2xl opacity-90 translate-y-2.5 translate-x-1.5"
+          className="absolute inset-0 rounded-2xl opacity-90 translate-y-2.5 translate-x-1.5 skew-x-0 lg:-skew-x-[22deg]"
           style={{
-            transform: 'skewX(-22deg)',
             background: `linear-gradient(to bottom, ${step.color}88, rgba(11,5,24,0.95))`,
             border: `1px solid ${step.color}55`,
           }}
@@ -95,9 +94,8 @@ function IsometricSlabRow({ step, stepIndex }) {
 
         {/* Main Top Glowing Glass Slab Face */}
         <div
-          className="relative w-full h-20 sm:h-24 rounded-2xl flex items-center justify-between px-6 sm:px-8 overflow-hidden transition-all duration-300 group-hover:border-white/60"
+          className="relative w-full h-20 sm:h-24 rounded-2xl flex items-center justify-between px-6 sm:px-8 overflow-hidden transition-all duration-300 group-hover:border-white/60 skew-x-0 lg:-skew-x-[22deg]"
           style={{
-            transform: 'skewX(-22deg)',
             background: `linear-gradient(135deg, ${step.color}ee 0%, ${step.color}88 55%, rgba(11,5,24,0.95) 100%)`,
             border: `2px solid ${step.color}99`,
             boxShadow: `inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -3px 12px ${step.glow}`,
@@ -118,7 +116,7 @@ function IsometricSlabRow({ step, stepIndex }) {
           />
 
           {/* Un-skewed Content: LOGO FIRST on left, NUMBER SECOND, TITLE on right */}
-          <div className="flex items-center w-full gap-4" style={{ transform: 'skewX(22deg)' }}>
+          <div className="flex items-center w-full gap-4 skew-x-0 lg:skew-x-[22deg]">
             {/* LEFT: Logo 1st + Number 2nd */}
             <div className="flex items-center gap-3.5 flex-shrink-0">
               {/* 1st: Logo inside glowing circular glass badge */}
