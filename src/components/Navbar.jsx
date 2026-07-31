@@ -10,7 +10,7 @@ const navLinks = [
   { name: 'Contact', href: '#contact' },
 ];
 
-export default function Navbar() {
+export default function Navbar({ onGoHome }) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('');
 
@@ -46,12 +46,16 @@ export default function Navbar() {
       <nav className="pointer-events-auto w-full md:w-max bg-[#0a0514]/70 backdrop-blur-xl border border-white/20 rounded-full px-4 md:px-8 py-3 shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
         <div className="flex justify-between items-center gap-8 md:gap-16">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-[0_0_15px_rgba(212,20,255,0.5)]">
-              <span className="font-heading font-bold text-white text-sm">EO</span>
-            </div>
-            <span className="font-heading font-bold text-lg tracking-tight text-white hidden sm:block">Edge Orion</span>
-          </div>
+          <button
+            onClick={onGoHome}
+            className="flex-shrink-0 flex items-center cursor-pointer focus:outline-none group"
+          >
+            <img 
+              src="/images/logo.svg" 
+              alt="Edge Orion Logo" 
+              className="w-24 md:w-32 h-8 md:h-10 object-contain filter drop-shadow-[0_0_8px_rgba(212,20,255,0.5)] group-hover:drop-shadow-[0_0_12px_rgba(212,20,255,0.8)] transition-all duration-300 group-hover:scale-105" 
+            />
+          </button>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex space-x-8 items-center">

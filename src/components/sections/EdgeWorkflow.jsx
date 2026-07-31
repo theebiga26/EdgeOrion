@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { FiGlobe, FiServer, FiCpu, FiPieChart, FiZap } from 'react-icons/fi';
 
 /* ─── Step data with architectural specifications ───────────────── */
 const STEPS = [
@@ -8,7 +7,7 @@ const STEPS = [
     title: 'Connect Intelligent Infrastructure',
     subtitle: 'Infrastructure Connection Layer',
     desc: 'Edge Orion establishes secure connections across distributed infrastructure, creating a foundation for real-time AI operations and centralized visibility.',
-    Icon: FiGlobe,
+    logoUrl: '/images/Connect%20Intelligent.svg',
     color: '#D414FF',
     glow: 'rgba(212,20,255,0.65)',
     specs: [
@@ -22,7 +21,7 @@ const STEPS = [
     title: 'Deploy AI Workloads at the Edge',
     subtitle: 'Model Orchestration Layer',
     desc: 'Deploy, update, and manage AI workloads across edge devices to enable faster processing, reduced latency, and efficient distributed inference.',
-    Icon: FiServer,
+    logoUrl: '/images/Deploy%20AI.svg',
     color: '#AA0ACC',
     glow: 'rgba(170,10,204,0.65)',
     specs: [
@@ -36,7 +35,7 @@ const STEPS = [
     title: 'Orchestrate Distributed Operations',
     subtitle: 'Edge Processing Layer',
     desc: 'Edge Orion manages device fleets, AI deployments, and infrastructure resources with automated workflows designed for scalable enterprise environments.',
-    Icon: FiCpu,
+    logoUrl: '/images/Orchestrate.svg',
     color: '#8800BB',
     glow: 'rgba(136,0,187,0.65)',
     specs: [
@@ -50,7 +49,7 @@ const STEPS = [
     title: 'Analyze Real-Time Intelligence',
     subtitle: 'Fleet Telemetry Layer',
     desc: 'Process video streams, sensor telemetry, and device data locally to detect events, monitor performance, and support faster decision-making.',
-    Icon: FiPieChart,
+    logoUrl: '/images/analyse%20real%20time.svg',
     color: '#7A00E6',
     glow: 'rgba(122,0,230,0.65)',
     specs: [
@@ -64,7 +63,7 @@ const STEPS = [
     title: 'Optimize and Scale Continuously',
     subtitle: 'Autonomous Execution Layer',
     desc: 'Monitor infrastructure health, optimize AI workloads, and expand edge operations seamlessly as organizations grow their intelligent device networks.',
-    Icon: FiZap,
+    logoUrl: '/images/Optimize%20and%20Scale%20Continuously.svg',
     color: '#5C00D9',
     glow: 'rgba(92,0,217,0.65)',
     specs: [
@@ -77,8 +76,6 @@ const STEPS = [
 
 /* ─── 3D Isometric Stacked Parallelogram Slab Component ─────────── */
 function IsometricSlabRow({ step, stepIndex }) {
-  const { Icon } = step;
-
   return (
     <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-6 lg:gap-8 w-full group cursor-pointer">
       {/* ── 1. LEFT: 3D Isometric Parallelogram Slab (skewX(-24deg)) ── */}
@@ -126,14 +123,15 @@ function IsometricSlabRow({ step, stepIndex }) {
             <div className="flex items-center gap-3.5 flex-shrink-0">
               {/* 1st: Logo inside glowing circular glass badge */}
               <div
-                className="flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-white/40 bg-white/15 shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-transform duration-300 group-hover:rotate-12"
+                className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full border border-white/40 bg-white/15 shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-transform duration-300 group-hover:rotate-12"
                 style={{
                   boxShadow: `0 0 16px ${step.glow}, inset 0 0 8px rgba(255,255,255,0.35)`,
                 }}
               >
-                <Icon
-                  className="text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.9)]"
-                  style={{ fontSize: 22 }}
+                <img
+                  src={step.logoUrl}
+                  alt={step.title}
+                  className="w-9 h-9 object-contain filter drop-shadow-[0_0_8px_rgba(255,255,255,0.9)]"
                 />
               </div>
 

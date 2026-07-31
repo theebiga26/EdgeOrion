@@ -61,7 +61,7 @@ function App() {
       </div>
 
       <div className="relative z-10">
-        <Navbar />
+        <Navbar onGoHome={handleBackToHome} />
 
         {activeView === 'home' ? (
           <main>
@@ -141,7 +141,7 @@ function App() {
 
         <LazySection minHeight="300px">
           <Suspense fallback={<div className="h-[300px]" />}>
-            <Footer onOpenPolicy={handleOpenPolicy} />
+            <Footer onOpenPolicy={handleOpenPolicy} onGoHome={handleBackToHome} />
           </Suspense>
         </LazySection>
       </div>

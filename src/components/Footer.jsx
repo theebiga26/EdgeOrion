@@ -1,6 +1,6 @@
 import { FaArrowRight, FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaPinterest } from 'react-icons/fa';
 
-export default function Footer({ onOpenPolicy }) {
+export default function Footer({ onOpenPolicy, onGoHome }) {
   return (
     <footer className="relative bg-[#05020a] text-textBase pt-32 pb-6 mt-32 rounded-t-[3rem] lg:rounded-t-[4rem] z-10 font-sans border-t border-white/10">
 
@@ -23,12 +23,17 @@ export default function Footer({ onOpenPolicy }) {
 
       {/* Overlapping Top Logo */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-        <div className="w-24 h-24 md:w-32 md:h-32 rounded-3xl md:rounded-[2rem] bg-[#05020a] border-2 border-primary/50 flex items-center justify-center shadow-glow hover:shadow-[0_0_40px_rgba(212,20,255,0.6)] transition-all duration-500 overflow-hidden group cursor-pointer group-hover:-translate-y-2">
+        <button
+          onClick={onGoHome}
+          className="w-28 h-28 md:w-36 md:h-36 rounded-3xl md:rounded-[2rem] bg-[#05020a] border-2 border-primary/50 flex items-center justify-center shadow-glow hover:shadow-[0_0_40px_rgba(212,20,255,0.6)] transition-all duration-500 overflow-hidden group cursor-pointer hover:-translate-y-2 focus:outline-none relative"
+        >
           <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
-          <span className="font-heading font-black text-transparent bg-clip-text bg-gradient-to-br from-primary to-secondary text-5xl md:text-6xl group-hover:scale-110 transition-transform duration-500 relative z-10">
-            EO
-          </span>
-        </div>
+          <img 
+            src="/images/logo.svg" 
+            alt="Edge Orion Logo" 
+            className="w-22 h-22 md:w-30 md:h-30 object-contain group-hover:scale-110 transition-transform duration-500 relative z-10" 
+          />
+        </button>
       </div>
 
       <div className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10 flex flex-col">
@@ -62,9 +67,12 @@ export default function Footer({ onOpenPolicy }) {
 
           {/* Middle Column: Brand */}
           <div className="flex flex-col items-center text-center">
-            <h2 className="text-4xl lg:text-5xl font-black text-white tracking-tight leading-none mb-4">
+            <button
+              onClick={onGoHome}
+              className="text-4xl lg:text-5xl font-black text-white tracking-tight leading-none mb-4 hover:text-primary transition-colors duration-300 focus:outline-none cursor-pointer"
+            >
               Edge Orion
-            </h2>
+            </button>
             <p className="text-textMuted text-sm leading-relaxed max-w-xs">
               Edge Orion is a unified Edge AI platform empowering enterprises to deploy, manage, and scale intelligent operations across distributed devices, camera networks, and sensor infrastructure — in real time, at the edge.
             </p>

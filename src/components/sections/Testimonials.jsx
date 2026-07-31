@@ -7,35 +7,42 @@ const testimonials = [
     name: 'Daniel Whitmore',
     role: 'Director of Industrial Technology, United Kingdom',
     feedback: 'Edge Orion gave us the visibility and control needed to manage complex device networks across multiple locations. We can now deploy AI workloads faster and monitor every edge operation from one unified platform.',
-    avatar: 'https://i.pravatar.cc/150?u=11'
+    avatar: '/images/testi_1%20(1).svg'
   },
   {
     id: 2,
     name: 'Olivia Bennett',
     role: 'Head of Digital Infrastructure, United States',
     feedback: 'Managing thousands of connected devices used to require multiple disconnected systems. Edge Orion created a single intelligence layer that improved our operational efficiency and simplified AI deployment.',
-    avatar: 'https://i.pravatar.cc/150?u=12'
+    avatar: '/images/testi_1%20(2).svg'
   },
   {
     id: 3,
     name: 'Ethan Caldwell',
     role: 'AI Solutions Architect, United States',
     feedback: 'The ability to process intelligence directly at the edge has changed how we approach real-time analytics. Edge Orion helps our teams make faster decisions while maintaining reliable performance at scale.',
-    avatar: 'https://i.pravatar.cc/150?u=13'
+    avatar: '/images/testi_1%20(3).svg'
   },
   {
     id: 4,
     name: 'Charlotte Richardson',
     role: 'Technology Strategy Lead, United Kingdom',
     feedback: 'Edge Orion bridges the gap between IoT infrastructure and enterprise AI operations. It provides the flexibility and control required for our next generation of connected systems.',
-    avatar: 'https://i.pravatar.cc/150?u=14'
+    avatar: '/images/testi_1%20(4).svg'
   },
   {
     id: 5,
     name: 'James Anderson',
     role: 'VP of Engineering, United States',
     feedback: 'From camera intelligence to sensor analytics, Edge Orion provides a powerful foundation for building smarter environments. It has become an essential layer in our distributed AI strategy.',
-    avatar: 'https://i.pravatar.cc/150?u=15'
+    avatar: '/images/testi_1%20(5).svg'
+  },
+  {
+    id: 6,
+    name: 'Sophia Nakamura',
+    role: 'Chief Technology Officer, Singapore',
+    feedback: 'Deploying Edge Orion across our Asia-Pacific infrastructure transformed how we manage distributed AI at scale. The real-time insights and centralized control have significantly reduced our operational overhead.',
+    avatar: '/images/testi_1%20(6).svg'
   }
 ];
 
@@ -157,11 +164,13 @@ export default function Testimonials() {
 
                       {/* Top Right Circular Avatar */}
                       <div className="absolute -top-12 right-4 md:-top-20 md:-right-8 z-30">
-                        <div className="w-28 h-28 md:w-44 md:h-44 rounded-full p-1.5 md:p-3 bg-white/10 backdrop-blur-xl shadow-[0_15px_35px_rgba(212,20,255,0.2)] border border-white/20">
+                        <div className="w-28 h-28 md:w-44 md:h-44 rounded-full p-1.5 md:p-3 bg-[#0a0514] backdrop-blur-xl shadow-[0_15px_35px_rgba(212,20,255,0.2)] border border-white/20">
                           <img 
                             src={t.avatar} 
-                            alt="Avatar" 
-                            className="w-full h-full rounded-full object-cover border-[3px] md:border-4 border-background shadow-inner" 
+                            alt={t.name}
+                            className="w-full h-full rounded-full object-contain bg-[#0a0514] border-[3px] md:border-4 border-background shadow-inner" 
+                            loading="lazy"
+                            decoding="async"
                           />
                         </div>
                       </div>

@@ -38,9 +38,9 @@ export default function AboutUs() {
                 className="w-full h-[400px] rounded-2xl overflow-hidden relative shadow-[0_0_30px_rgba(0,0,0,0.5)] border border-white/10"
               >
                 <img 
-                  src="/assets/images/about_us_portrait.png" 
-                  alt="Web3 Developer" 
-                  className="w-full h-full object-cover"
+                  src="/images/about.svg" 
+                  alt="Edge Orion About" 
+                  className="w-full h-full object-contain p-2"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
@@ -54,7 +54,7 @@ export default function AboutUs() {
             <div className="lg:col-span-8 flex flex-col gap-8 lg:gap-12">
               
               {/* Top Row Text Content */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+              <div className="flex flex-col gap-4 items-start max-w-3xl">
                 <div>
                   <div className="flex items-center gap-2 mb-4">
                     <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(212,20,255,0.8)]"></div>
@@ -65,11 +65,9 @@ export default function AboutUs() {
                   </h2>
                 </div>
                 
-                <div className="flex flex-col items-start mt-2 md:mt-10">
-                  <p className="text-textMuted text-sm leading-relaxed mb-6 md:text-right">
-                    Edge Orion empowers enterprises to deploy, manage, and optimize AI across distributed devices, camera systems, and sensor networks. Our unified Edge AI platform delivers real-time intelligence, centralized fleet management, and scalable infrastructure that enables faster decisions, greater operational efficiency, and resilient edge operations.
-                  </p>
-                </div>
+                <p className="text-textMuted text-sm md:text-base leading-relaxed mb-4">
+                  Edge Orion empowers enterprises to deploy, manage, and optimize AI across distributed devices, camera systems, and sensor networks. Our unified Edge AI platform delivers real-time intelligence, centralized fleet management, and scalable infrastructure that enables faster decisions, greater operational efficiency, and resilient edge operations.
+                </p>
               </div>
 
               {/* Bottom Landscape Image with Play Button */}
@@ -83,31 +81,15 @@ export default function AboutUs() {
                 {/* Image */}
                 <div className="absolute inset-0 rounded-2xl overflow-hidden">
                   <img 
-                    src="/assets/images/about_us_landscape.png" 
-                    alt="Global Data Network" 
-                    className="w-full h-full object-cover opacity-80"
+                    src="/images/about_1.svg" 
+                    alt="Edge Orion Technology" 
+                    className="w-full h-full object-contain opacity-90 p-4"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-tr from-background via-transparent to-primary/20 opacity-60"></div>
                 </div>
 
-                {/* Overlapping Play Button to mimic the "cutout" effect */}
-                <div className="absolute -bottom-6 -left-6 z-20">
-                  <div className="relative group cursor-pointer">
-                    {/* The thick border mimics the background cutout */}
-                    <div className="w-24 h-24 rounded-tl-[40px] rounded-br-[40px] rounded-tr-[40px] rounded-bl-[10px] bg-background absolute -inset-3 -z-10"></div>
-                    
-                    <motion.div 
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="w-20 h-20 rounded-2xl bg-gradient-to-br from-secondary to-primary flex items-center justify-center shadow-[0_0_30px_rgba(212,20,255,0.6)]"
-                    >
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 3L19 12L5 21V3Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </motion.div>
-                  </div>
-                </div>
+
 
               </motion.div>
 

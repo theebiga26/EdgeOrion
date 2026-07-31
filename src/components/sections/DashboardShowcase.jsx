@@ -28,7 +28,7 @@ export default function DashboardShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative w-full max-w-6xl mx-auto rounded-3xl border border-white/10 bg-[#0a0514]/80 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col md:flex-row h-[600px]"
+          className="relative w-full max-w-6xl mx-auto rounded-3xl border border-white/10 bg-[#0a0514]/80 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col md:flex-row h-auto md:h-[600px] will-change-transform"
         >
           {/* Dashboard Sidebar */}
           <div className="w-full md:w-64 border-b md:border-b-0 md:border-r border-white/10 bg-black/40 p-6 flex flex-row md:flex-col justify-between md:justify-start gap-4">

@@ -41,13 +41,14 @@ export default function FAQ() {
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="relative flex-1 min-h-[400px] rounded-2xl overflow-hidden group border border-white/10"
+                className="relative flex-1 min-h-[400px] rounded-2xl overflow-hidden group border border-white/10 bg-[#0a0514]"
               >
                 <img 
-                  src="/assets/images/faq_support.png" 
+                  src="/images/faq.svg" 
                   alt="Edge Orion Support" 
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="absolute inset-0 w-full h-full object-contain p-6 transition-transform duration-700 group-hover:scale-105 will-change-transform"
                   loading="lazy"
+                  decoding="async"
                 />
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0514] via-[#0a0514]/70 to-transparent"></div>

@@ -88,59 +88,18 @@ export default function Hero() {
                 </div>
               </motion.div>
 
-              {/* Right Card / 3D Scrolling Grid */}
+              {/* Right Card / Static Hero Image */}
               <motion.div 
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: 0.2 }}
-                className="w-full lg:w-[480px] h-[550px] relative hidden md:block mt-2 perspective-[1500px]"
+                className="w-full lg:w-[580px] h-[650px] relative hidden md:flex items-center justify-center mt-2 z-20"
               >
-                {/* Vignette Mask to blend edges into background */}
-                <div className="absolute inset-[-50%] z-20 pointer-events-none" style={{ background: 'radial-gradient(circle at center, transparent 20%, rgba(5,0,20,1) 60%)' }}></div>
-                
-                {/* 3D Tilted Container */}
-                <div className="absolute inset-[-20%] flex gap-4 [transform:rotateX(25deg)_rotateY(-25deg)_rotateZ(10deg)] [transform-style:preserve-3d]">
-                  
-                  {/* Column 1 (Scroll Up) */}
-                  <div className="flex-1 overflow-hidden h-[200%]">
-                    <div className="flex flex-col gap-4 animate-scroll-up">
-                        <img src="/assets/images/ent_storage.png" alt="Storage" className="rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.8)] border border-white/10 w-full object-cover aspect-[3/4]" />
-                        <img src="/assets/images/ent_privacy.png" alt="Privacy" className="rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.8)] border border-white/10 w-full object-cover aspect-[3/4]" />
-                        <img src="/assets/images/about_us_portrait.png" alt="About" className="rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.8)] border border-white/10 w-full object-cover aspect-[3/4]" />
-                        {/* Duplicate for infinite loop */}
-                        <img src="/assets/images/ent_storage.png" alt="Storage" className="rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.8)] border border-white/10 w-full object-cover aspect-[3/4]" />
-                        <img src="/assets/images/ent_privacy.png" alt="Privacy" className="rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.8)] border border-white/10 w-full object-cover aspect-[3/4]" />
-                        <img src="/assets/images/about_us_portrait.png" alt="About" className="rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.8)] border border-white/10 w-full object-cover aspect-[3/4]" />
-                    </div>
-                  </div>
-
-                  {/* Column 2 (Scroll Down) */}
-                  <div className="flex-1 overflow-hidden h-[200%]">
-                    <div className="flex flex-col gap-4 animate-scroll-down">
-                        <img src="/assets/images/ent_throughput.png" alt="Throughput" className="rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.8)] border border-white/10 w-full object-cover aspect-[3/4]" />
-                        <img src="/assets/images/ent_analytics.png" alt="Analytics" className="rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.8)] border border-white/10 w-full object-cover aspect-[3/4]" />
-                        <img src="/assets/images/faq_support.png" alt="Support" className="rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.8)] border border-white/10 w-full object-cover aspect-[3/4]" />
-                        {/* Duplicate for infinite loop */}
-                        <img src="/assets/images/ent_throughput.png" alt="Throughput" className="rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.8)] border border-white/10 w-full object-cover aspect-[3/4]" />
-                        <img src="/assets/images/ent_analytics.png" alt="Analytics" className="rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.8)] border border-white/10 w-full object-cover aspect-[3/4]" />
-                        <img src="/assets/images/faq_support.png" alt="Support" className="rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.8)] border border-white/10 w-full object-cover aspect-[3/4]" />
-                    </div>
-                  </div>
-
-                  {/* Column 3 (Scroll Up offset) */}
-                  <div className="flex-1 overflow-hidden h-[200%]">
-                    <div className="flex flex-col gap-4 animate-scroll-up" style={{ animationDelay: '-10s' }}>
-                        <img src="/assets/images/ent_integrity.png" alt="Integrity" className="rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.8)] border border-white/10 w-full object-cover aspect-[3/4]" />
-                        <img src="/assets/images/ent_compliance.png" alt="Compliance" className="rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.8)] border border-white/10 w-full object-cover aspect-[3/4]" />
-                        <img src="/assets/images/ent_storage.png" alt="Storage" className="rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.8)] border border-white/10 w-full object-cover aspect-[3/4]" />
-                        {/* Duplicate for infinite loop */}
-                        <img src="/assets/images/ent_integrity.png" alt="Integrity" className="rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.8)] border border-white/10 w-full object-cover aspect-[3/4]" />
-                        <img src="/assets/images/ent_compliance.png" alt="Compliance" className="rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.8)] border border-white/10 w-full object-cover aspect-[3/4]" />
-                        <img src="/assets/images/ent_storage.png" alt="Storage" className="rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.8)] border border-white/10 w-full object-cover aspect-[3/4]" />
-                    </div>
-                  </div>
-
-                </div>
+                <img 
+                  src="/images/hero_img.svg" 
+                  alt="Edge Orion Hero Image" 
+                  className="w-full h-full object-contain filter drop-shadow-[0_0_20px_rgba(212,20,255,0.2)]" 
+                />
               </motion.div>
             </div>
 
