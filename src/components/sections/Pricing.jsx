@@ -7,6 +7,8 @@ const pricingPlans = [
     name: "Starter Edge",
     monthlyPrice: 129,
     annualPrice: 103,
+    monthlyLink: "https://buy.stripe.com/test_6oUeVf7SF24tb5a71Qg7e00",
+    annualLink: "https://buy.stripe.com/test_aFadRb7SFdNbgpu0Dsg7e02",
     description: "For teams building their first intelligent edge deployments",
     badge: null,
     accentColor: "#8800BB",
@@ -29,6 +31,8 @@ const pricingPlans = [
     name: "Enterprise Edge",
     monthlyPrice: 299,
     annualPrice: 239,
+    monthlyLink: "https://buy.stripe.com/test_6oU14pc8VgZna16fymg7e01",
+    annualLink: "https://buy.stripe.com/test_bJe7sN0qdeRf3CIae2g7e03",
     description: "For organizations managing large-scale AI-powered operations",
     badge: "Most Popular",
     accentColor: "#D414FF",
@@ -52,6 +56,8 @@ const pricingPlans = [
     name: "Autonomous Edge",
     monthlyPrice: null,
     annualPrice: null,
+    monthlyLink: null,
+    annualLink: null,
     description: "For global infrastructure requiring unlimited scalability",
     badge: null,
     accentColor: "#4A00E0",
@@ -140,6 +146,11 @@ export default function Pricing() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 xl:gap-8 relative z-10 items-stretch">
             {pricingPlans.map((plan, index) => {
               const isHighlighted = index === 1;
+              const activeLink = isAnnual
+                ? (plan.annualLink || plan.ctaLink || "#contact")
+                : (plan.monthlyLink || plan.ctaLink || "#contact");
+              const isExternal = activeLink.startsWith("http");
+
               return (
                 <motion.div
                   key={plan.id}
@@ -191,7 +202,7 @@ export default function Pricing() {
                           <span className="text-5xl font-black text-white leading-none tracking-tight">
                             {isAnnual ? plan.annualPrice : plan.monthlyPrice}
                           </span>
-                          <span className="text-white/40 text-sm mb-1 ml-1">/ month</span>
+                          <span className="text-white/40 text-sm mb-1 ml-1">{isAnnual ? "/ year" : "/ month"}</span>
                         </>
                       )}
                     </div>
@@ -221,10 +232,21 @@ export default function Pricing() {
                   {/* CTA Button — pinned to bottom */}
                   <div className="px-7 pb-8 pt-2 mt-auto">
                     <motion.a
-                      href={plan.ctaLink || "#contact"}
+                      href={activeLink}
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noopener noreferrer" : undefined}
+                      onClick={(e) => {
+                        if (!isExternal && activeLink.startsWith("#")) {
+                          e.preventDefault();
+                          const el = document.getElementById(activeLink.replace("#", ""));
+                          if (el) {
+                            el.scrollIntoView({ behavior: "smooth" });
+                          }
+                        }
+                      }}
                       whileHover={{ scale: 1.03 }}
                       whileTap={{ scale: 0.97 }}
-                      className={`block text-center w-full py-3.5 rounded-tl-[24px] rounded-br-[24px] rounded-tr-[4px] rounded-bl-[4px] font-bold text-sm tracking-wider transition-all ${plan.ctaStyle}`}
+                      className={`block text-center w-full py-3.5 rounded-tl-[24px] rounded-br-[24px] rounded-tr-[4px] rounded-bl-[4px] font-bold text-sm tracking-wider transition-all cursor-pointer ${plan.ctaStyle}`}
                     >
                       {plan.ctaText}
                     </motion.a>
