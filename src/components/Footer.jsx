@@ -53,7 +53,7 @@ export default function Footer({ onOpenPolicy, onGoHome }) {
               <a href="#" className="w-12 h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center text-textMuted hover:text-primary hover:border-primary/50 transition-all hover:scale-110 hover:-translate-y-1 shadow-glow group">
                 <FaInstagram size={20} className="group-hover:text-primary" />
               </a>
-              <a href="#" className="w-12 h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center text-textMuted hover:text-primary hover:border-primary/50 transition-all hover:scale-110 hover:-translate-y-1 shadow-glow group">
+              <a href="https://www.linkedin.com/company/edge-orion/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center text-textMuted hover:text-primary hover:border-primary/50 transition-all hover:scale-110 hover:-translate-y-1 shadow-glow group">
                 <FaLinkedin size={20} className="group-hover:text-primary" />
               </a>
               <a href="#" className="w-12 h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center text-textMuted hover:text-primary hover:border-primary/50 transition-all hover:scale-110 hover:-translate-y-1 shadow-glow group">
